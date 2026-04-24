@@ -30,7 +30,7 @@ Deno.serve(async (req) => {
     }
 
     const body = (await req.json()) as LeadPayload;
-    const { nombre, apellido, email, telefono, mensaje } = body;
+    const { nombre, apellido, email, telefono, mensaje, edad, presupuesto } = body;
 
     if (!email || !nombre) {
       return new Response(
@@ -43,9 +43,11 @@ Deno.serve(async (req) => {
       firstname: nombre,
       email,
     };
-    if (apellido) properties.lastname = apellido;
-    if (telefono) properties.phone = telefono;
-    if (mensaje) properties.message = mensaje;
+    if (apellido && apellido.trim()) properties.lastname = apellido.trim();
+    if (telefono && telefono.trim()) properties.phone = telefono.trim();
+    if (mensaje && mensaje.trim()) properties.message = mensaje.trim();
+    if (edad && edad.trim()) properties.age = edad.trim();
+    if (presupuesto && presupuesto.trim()) properties.presupuesto_estimado = presupuesto.trim();
 
     const hsRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
       method: "POST",

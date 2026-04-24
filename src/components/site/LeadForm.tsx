@@ -176,9 +176,9 @@ const LeadForm = () => {
                 defaultValue=""
               >
                 <option value="" disabled>Selecciona un rango</option>
-                <option>500K – 1M</option>
-                <option>1M – 2M</option>
-                <option>2M – 5M</option>
+                <option>500K - 1M</option>
+                <option>1M - 2M</option>
+                <option>2M - 5M</option>
                 <option>5M+</option>
               </select>
             </div>
