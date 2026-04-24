@@ -1,3 +1,10 @@
+import p1 from "@/assets/property-1.jpg";
+import p2 from "@/assets/property-2.jpg";
+import p3 from "@/assets/property-3.jpg";
+import p4 from "@/assets/property-4.jpg";
+import p5 from "@/assets/property-5.jpg";
+import p6 from "@/assets/property-6.jpg";
+
 export type Property = {
   id: string;
   title: string;
