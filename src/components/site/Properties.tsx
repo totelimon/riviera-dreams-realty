@@ -56,88 +56,9 @@ const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) =
         )}
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {visible.map((p) => {
-            const imgs = p.images.length > 0 ? p.images : [p.img];
-            const idx = getCardIndex(p.id);
-            const current = imgs[idx] ?? imgs[0];
-            const hasMultiple = imgs.length > 1;
-            const prev = (e: React.MouseEvent) => {
-              e.stopPropagation();
-              setCardIndex(p.id, (idx - 1 + imgs.length) % imgs.length);
-            };
-            const next = (e: React.MouseEvent) => {
-              e.stopPropagation();
-              setCardIndex(p.id, (idx + 1) % imgs.length);
-            };
-            return (
-            <article
-              key={p.id}
-              onClick={() => openProperty(p)}
-              className="group bg-card shadow-card overflow-hidden transition-elegant hover:shadow-elegant cursor-pointer text-left"
-            >
-              <div className="relative overflow-hidden aspect-[4/5]">
-                <img
-                  src={current}
-                  alt={p.title}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="h-full w-full object-cover transition-elegant group-hover:scale-105"
-                />
-                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur text-[10px] tracking-luxe uppercase px-3 py-1.5 text-foreground z-10">
-                  En venta
-                </span>
-                {hasMultiple && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={prev}
-                      aria-label="Imagen anterior"
-                      className="absolute left-0 top-0 h-full w-1/5 flex items-center justify-start pl-3 group/arrow z-10"
-                    >
-                      <span className="bg-background/80 backdrop-blur text-foreground p-1.5 rounded-full opacity-0 group-hover:opacity-100 group-hover/arrow:bg-background transition-elegant">
-                        <ChevronLeft className="h-4 w-4" />
-                      </span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={next}
-                      aria-label="Imagen siguiente"
-                      className="absolute right-0 top-0 h-full w-1/5 flex items-center justify-end pr-3 group/arrow z-10"
-                    >
-                      <span className="bg-background/80 backdrop-blur text-foreground p-1.5 rounded-full opacity-0 group-hover:opacity-100 group-hover/arrow:bg-background transition-elegant">
-                        <ChevronRight className="h-4 w-4" />
-                      </span>
-                    </button>
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-                      {imgs.map((_, i) => (
-                        <span
-                          key={i}
-                          className={`h-1.5 w-1.5 rounded-full transition-elegant ${
-                            i === idx ? "bg-background" : "bg-background/50"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-              <div className="p-7">
-                <p className="text-jungle-soft text-[11px] tracking-luxe uppercase mb-2">
-                  {p.location}
-                </p>
-                <h3 className="font-serif text-2xl text-foreground mb-3">{p.title}</h3>
-                <p className="text-muted-foreground text-sm mb-5">{p.specs}</p>
-                <div className="flex items-center justify-between border-t border-border pt-4">
-                  <span className="font-serif text-lg text-foreground">{p.price}</span>
-                  <span className="text-xs tracking-luxe uppercase text-jungle group-hover:text-gold transition-colors">
-                    Detalles →
-                  </span>
-                </div>
-              </div>
-            </article>
-            );
-          })}
+          {visible.map((p) => (
+            <PropertyCard key={p.id} property={p} onOpen={openProperty} />
+          ))}
         </div>
 
         {!showAll && (
