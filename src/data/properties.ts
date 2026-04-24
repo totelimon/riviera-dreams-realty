@@ -21,8 +21,7 @@ export type Property = {
   specs: string;
 };
 
-const buildSpecs = (beds: number, baths: number, sqft: number) =>
-  `${beds} Rec · ${baths} Baños · ${sqft} m²`;
+const buildSpecs = (beds: number, baths: number, sqft: number) => `${beds} Rec · ${baths} Baños · ${sqft} m²`;
 
 export const properties: Property[] = [
   {
@@ -37,7 +36,7 @@ export const properties: Property[] = [
     img: p1,
     name: "Casa Turquesa",
     location: "Playacar Fase II",
-    price: "USD 2,450,000",
+    price: "USD 1,450,000",
     specs: buildSpecs(4, 4.5, 520),
   },
   {
