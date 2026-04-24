@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import leaves from "@/assets/leaves-bg.jpg";
+import { supabase } from "@/integrations/supabase/client";
 
 type Errors = Partial<Record<"nombre" | "apellido" | "email" | "telefono", string>>;
 
@@ -38,7 +39,7 @@ const LeadForm = () => {
     el.value = el.value.replace(/[^0-9+\s-]/g, "");
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -50,15 +51,45 @@ const LeadForm = () => {
     }
     setSubmitting(true);
     setSuccess(false);
-    setTimeout(() => {
-      setSubmitting(false);
+
+    const payload = {
+      nombre: String(data.get("nombre") || "").trim(),
+      apellido: String(data.get("apellido") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      telefono: String(data.get("telefono") || "").trim(),
+      edad: String(data.get("edad") || "").trim(),
+      presupuesto: String(data.get("presupuesto") || "").trim(),
+      mensaje: String(data.get("mensaje") || "").trim(),
+    };
+
+    try {
+      const { data: res, error } = await supabase.functions.invoke("hubspot-leads", {
+        body: payload,
+      });
+      if (error) throw error;
+      if (res?.error) throw new Error(res.error);
+
       setSuccess(true);
       form.reset();
       toast.success("Solicitud recibida", {
         description: "Un asesor de Selva·Mar se pondrá en contacto contigo en breve.",
       });
       setTimeout(() => setSuccess(false), 4000);
-    }, 1200);
+    } catch (err) {
+      console.error("Lead submit failed", err);
+      const message =
+        err instanceof Error ? err.message : "No pudimos enviar tu solicitud.";
+      toast.error("Error al enviar", {
+        description: `${message} Intenta nuevamente o escríbenos directamente.`,
+      });
+      if (typeof window !== "undefined") {
+        window.alert(
+          "No pudimos enviar tu solicitud en este momento. Por favor intenta de nuevo más tarde.",
+        );
+      }
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
