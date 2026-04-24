@@ -1,50 +1,41 @@
-import p1 from "@/assets/property-1.jpg";
-import p2 from "@/assets/property-2.jpg";
-import p3 from "@/assets/property-3.jpg";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { properties } from "@/data/properties";
 
-const properties = [
-  {
-    img: p1,
-    name: "Casa Turquesa",
-    location: "Playacar Fase II",
-    price: "USD 2,450,000",
-    specs: "4 Rec · 4.5 Baños · 520 m²",
-  },
-  {
-    img: p2,
-    name: "Villa Sak'be",
-    location: "Aldea Zamá, Tulum",
-    price: "USD 1,890,000",
-    specs: "3 Rec · 3 Baños · 380 m²",
-  },
-  {
-    img: p3,
-    name: "Residencia Kaan",
-    location: "Mayakoba",
-    price: "USD 3,150,000",
-    specs: "5 Rec · 5 Baños · 640 m²",
-  },
-];
+type PropertiesProps = {
+  showAll?: boolean;
+  hideHeading?: boolean;
+};
 
-const Properties = () => {
+const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const visible = showAll
+    ? properties
+    : expanded
+    ? properties.slice(0, 6)
+    : properties.slice(0, 3);
+
   return (
     <section id="propiedades" className="py-24 md:py-32 bg-gradient-chukum">
       <div className="container">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <div>
-            <p className="text-jungle text-xs tracking-luxe uppercase mb-4">Selección curada</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground max-w-2xl text-balance">
-              Propiedades destacadas
-            </h2>
+        {!hideHeading && (
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div>
+              <p className="text-jungle text-xs tracking-luxe uppercase mb-4">Selección curada</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-foreground max-w-2xl text-balance">
+                Propiedades destacadas
+              </h2>
+            </div>
+            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
+              Cada residencia es elegida por su arquitectura, ubicación
+              privilegiada y diálogo con la naturaleza del Caribe mexicano.
+            </p>
           </div>
-          <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
-            Cada residencia es elegida por su arquitectura, ubicación
-            privilegiada y diálogo con la naturaleza del Caribe mexicano.
-          </p>
-        </div>
+        )}
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {properties.map((p) => (
+          {visible.map((p) => (
             <article
               key={p.name}
               className="group bg-card shadow-card overflow-hidden transition-elegant hover:shadow-elegant"
@@ -70,7 +61,14 @@ const Properties = () => {
                 <p className="text-muted-foreground text-sm mb-5">{p.specs}</p>
                 <div className="flex items-center justify-between border-t border-border pt-4">
                   <span className="font-serif text-lg text-foreground">{p.price}</span>
-                  <a href="#contacto" className="text-xs tracking-luxe uppercase text-jungle hover:text-gold transition-colors">
+                  <a
+                    href="#contacto"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="text-xs tracking-luxe uppercase text-jungle hover:text-gold transition-colors"
+                  >
                     Detalles →
                   </a>
                 </div>
@@ -78,6 +76,26 @@ const Properties = () => {
             </article>
           ))}
         </div>
+
+        {!showAll && (
+          <div className="mt-14 flex justify-center">
+            {!expanded ? (
+              <button
+                onClick={() => setExpanded(true)}
+                className="border border-jungle text-jungle text-xs tracking-luxe uppercase px-10 py-4 hover:bg-jungle hover:text-primary-foreground transition-elegant"
+              >
+                Más
+              </button>
+            ) : (
+              <Link
+                to="/propiedades"
+                className="bg-jungle text-primary-foreground text-xs tracking-luxe uppercase px-10 py-4 hover:bg-gold transition-elegant"
+              >
+                Ver más propiedades
+              </Link>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
