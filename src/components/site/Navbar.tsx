@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { to: "/propiedades", label: "Propiedades" },
@@ -10,6 +11,7 @@ const links = [
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,8 +21,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleScrollTo = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const goToContact = (id: string) => {
+    setOpen(false);
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollTo: id } });
       return;
@@ -28,29 +41,54 @@ const Navbar = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const onSurface = scrolled || open;
+
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-elegant ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border/60 py-4"
-          : "bg-transparent py-6"
+        onSurface
+          ? "bg-background/95 backdrop-blur-md border-b border-border/60 py-3 md:py-4"
+          : "bg-transparent py-4 md:py-6"
       }`}
     >
-      <nav className="container flex items-center justify-between">
-        <Link to="/" className={`font-serif text-2xl tracking-wide ${scrolled ? "text-foreground" : "text-background"}`}>
+      <nav className="container relative flex items-center justify-between md:justify-between">
+        {/* Mobile burger */}
+        <button
+          type="button"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className={`md:hidden p-2 -ml-2 ${onSurface ? "text-foreground" : "text-background"}`}
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+
+        {/* Logo: centered on mobile, left on desktop */}
+        <Link
+          to="/"
+          onClick={() => setOpen(false)}
+          className={`font-serif text-xl md:text-2xl tracking-wide absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 ${
+            onSurface ? "text-foreground" : "text-background"
+          }`}
+        >
           Selva<span className="text-gold">·</span>Mar
         </Link>
-        <ul className={`hidden md:flex items-center gap-10 text-xs tracking-luxe uppercase ${scrolled ? "text-foreground/80" : "text-background/90"}`}>
+
+        {/* Desktop nav */}
+        <ul
+          className={`hidden md:flex items-center gap-10 text-xs tracking-luxe uppercase ${
+            scrolled ? "text-foreground/80" : "text-background/90"
+          }`}
+        >
           {links.map((l) => (
             <li key={l.label}>
               {"scrollTo" in l && l.scrollTo ? (
-                <a
-                  href={`#${l.scrollTo}`}
-                  onClick={(e) => handleScrollTo(e, l.scrollTo)}
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => goToContact(l.scrollTo)}
+                  className="hover:text-gold transition-colors uppercase tracking-luxe"
                 >
                   {l.label}
-                </a>
+                </button>
               ) : (
                 <Link to={l.to} className="hover:text-gold transition-colors">
                   {l.label}
@@ -59,9 +97,12 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <a
-          href="#contacto"
-          onClick={(e) => handleScrollTo(e, "contacto")}
+
+        {/* Spacer on mobile to balance burger */}
+        <span className="md:hidden w-6" aria-hidden />
+
+        <button
+          onClick={() => goToContact("contacto")}
           className={`hidden md:inline-block text-xs tracking-luxe uppercase border px-5 py-3 transition-elegant ${
             scrolled
               ? "border-foreground/40 text-foreground hover:bg-foreground hover:text-background"
@@ -69,8 +110,46 @@ const Navbar = () => {
           }`}
         >
           Agendar visita
-        </a>
+        </button>
       </nav>
+
+      {/* Mobile drawer */}
+      <div
+        className={`md:hidden fixed inset-x-0 top-[56px] bg-background border-t border-border/60 transition-elegant overflow-hidden ${
+          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <ul className="container flex flex-col py-6 gap-1 text-sm tracking-luxe uppercase text-foreground">
+          {links.map((l) => (
+            <li key={l.label}>
+              {"scrollTo" in l && l.scrollTo ? (
+                <button
+                  onClick={() => goToContact(l.scrollTo)}
+                  className="block w-full text-left py-4 border-b border-border/60 hover:text-gold transition-colors"
+                >
+                  {l.label}
+                </button>
+              ) : (
+                <Link
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="block py-4 border-b border-border/60 hover:text-gold transition-colors"
+                >
+                  {l.label}
+                </Link>
+              )}
+            </li>
+          ))}
+          <li className="pt-6">
+            <button
+              onClick={() => goToContact("contacto")}
+              className="block w-full text-center text-xs tracking-luxe uppercase border border-foreground/40 text-foreground hover:bg-foreground hover:text-background px-5 py-4 transition-elegant"
+            >
+              Agendar visita
+            </button>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };
