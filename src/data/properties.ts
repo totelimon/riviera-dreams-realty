@@ -34,11 +34,10 @@ export const properties: Property[] = [
     sqft: 90.73,
     images: [
       "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/FACHADA_1.jpg?v=1777060869",
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/FACHADA_2.jpg?v=1777060869",
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_152336.png?v=1777065839",
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_152351.png?v=1777065839",
       "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Diseno_sin_titulo_8.png?v=1777065058",
       "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_150621.png?v=1777064787",
+      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_152336.png?v=1777065839",
+      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_152351.png?v=1777065839",
       "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/ROOF.png?v=1777060871",
       "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_151234.png?v=1777065160",
       "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_151305.png?v=1777065211",
