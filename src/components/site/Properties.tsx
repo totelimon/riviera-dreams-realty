@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { properties, type Property } from "@/data/properties";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   Dialog,
   DialogContent,
