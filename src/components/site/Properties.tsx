@@ -192,7 +192,7 @@ const PropertyCard = ({ property, onOpen }: PropertyCardProps) => {
             {imgs.map((src, i) => (
               <div
                 key={i}
-                className="relative flex-[0_0_100%] min-w-0 h-full cursor-pointer"
+                className="relative flex-[0_0_100%] min-w-0 h-full overflow-hidden cursor-pointer"
                 onClick={() => onOpen(property)}
               >
                 <img
@@ -201,7 +201,7 @@ const PropertyCard = ({ property, onOpen }: PropertyCardProps) => {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="h-full w-full object-cover transition-elegant group-hover:scale-105"
+                  className="h-full w-full object-cover transition-elegant md:group-hover:scale-105"
                 />
               </div>
             ))}
