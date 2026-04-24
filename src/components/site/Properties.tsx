@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { properties, type Property } from "@/data/properties";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   Dialog,
   DialogContent,
@@ -9,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 type PropertiesProps = {
   showAll?: boolean;
@@ -18,16 +20,9 @@ type PropertiesProps = {
 const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) => {
   const [expanded, setExpanded] = useState(false);
   const [selected, setSelected] = useState<Property | null>(null);
-  const [cardIndexes, setCardIndexes] = useState<Record<string, number>>({});
-  const [modalIndex, setModalIndex] = useState(0);
-
-  const getCardIndex = (id: string) => cardIndexes[id] ?? 0;
-  const setCardIndex = (id: string, idx: number) =>
-    setCardIndexes((prev) => ({ ...prev, [id]: idx }));
 
   const openProperty = (p: Property) => {
     setSelected(p);
-    setModalIndex(0);
   };
 
   const visible = showAll
@@ -62,88 +57,9 @@ const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) =
         )}
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {visible.map((p) => {
-            const imgs = p.images.length > 0 ? p.images : [p.img];
-            const idx = getCardIndex(p.id);
-            const current = imgs[idx] ?? imgs[0];
-            const hasMultiple = imgs.length > 1;
-            const prev = (e: React.MouseEvent) => {
-              e.stopPropagation();
-              setCardIndex(p.id, (idx - 1 + imgs.length) % imgs.length);
-            };
-            const next = (e: React.MouseEvent) => {
-              e.stopPropagation();
-              setCardIndex(p.id, (idx + 1) % imgs.length);
-            };
-            return (
-            <article
-              key={p.id}
-              onClick={() => openProperty(p)}
-              className="group bg-card shadow-card overflow-hidden transition-elegant hover:shadow-elegant cursor-pointer text-left"
-            >
-              <div className="relative overflow-hidden aspect-[4/5]">
-                <img
-                  src={current}
-                  alt={p.title}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="h-full w-full object-cover transition-elegant group-hover:scale-105"
-                />
-                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur text-[10px] tracking-luxe uppercase px-3 py-1.5 text-foreground z-10">
-                  En venta
-                </span>
-                {hasMultiple && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={prev}
-                      aria-label="Imagen anterior"
-                      className="absolute left-0 top-0 h-full w-1/5 flex items-center justify-start pl-3 group/arrow z-10"
-                    >
-                      <span className="bg-background/80 backdrop-blur text-foreground p-1.5 rounded-full opacity-0 group-hover:opacity-100 group-hover/arrow:bg-background transition-elegant">
-                        <ChevronLeft className="h-4 w-4" />
-                      </span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={next}
-                      aria-label="Imagen siguiente"
-                      className="absolute right-0 top-0 h-full w-1/5 flex items-center justify-end pr-3 group/arrow z-10"
-                    >
-                      <span className="bg-background/80 backdrop-blur text-foreground p-1.5 rounded-full opacity-0 group-hover:opacity-100 group-hover/arrow:bg-background transition-elegant">
-                        <ChevronRight className="h-4 w-4" />
-                      </span>
-                    </button>
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-                      {imgs.map((_, i) => (
-                        <span
-                          key={i}
-                          className={`h-1.5 w-1.5 rounded-full transition-elegant ${
-                            i === idx ? "bg-background" : "bg-background/50"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-              <div className="p-7">
-                <p className="text-jungle-soft text-[11px] tracking-luxe uppercase mb-2">
-                  {p.location}
-                </p>
-                <h3 className="font-serif text-2xl text-foreground mb-3">{p.title}</h3>
-                <p className="text-muted-foreground text-sm mb-5">{p.specs}</p>
-                <div className="flex items-center justify-between border-t border-border pt-4">
-                  <span className="font-serif text-lg text-foreground">{p.price}</span>
-                  <span className="text-xs tracking-luxe uppercase text-jungle group-hover:text-gold transition-colors">
-                    Detalles →
-                  </span>
-                </div>
-              </div>
-            </article>
-            );
-          })}
+          {visible.map((p) => (
+            <PropertyCard key={p.id} property={p} onOpen={openProperty} />
+          ))}
         </div>
 
         {!showAll && (
@@ -168,81 +84,19 @@ const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) =
       </div>
 
       <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 gap-0 bg-card">
+        <DialogContent className="max-w-4xl max-h-[95vh] overflow-y-auto p-0 gap-0 bg-card [&>button]:hidden">
           {selected && (() => {
             const imgs = selected.images.length > 0 ? selected.images : [selected.img];
-            const mainImg = imgs[modalIndex] ?? imgs[0];
-            const hasMultiple = imgs.length > 1;
-            const prevModal = () => setModalIndex((modalIndex - 1 + imgs.length) % imgs.length);
-            const nextModal = () => setModalIndex((modalIndex + 1) % imgs.length);
             return (
-              <div className="flex flex-col">
-                <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-muted">
-                  <img
-                    src={mainImg}
-                    alt={selected.title}
-                    className="h-full w-full object-cover"
-                  />
-                  <span className="absolute top-4 left-4 bg-background/90 backdrop-blur text-[10px] tracking-luxe uppercase px-3 py-1.5 text-foreground z-10">
-                    En venta
-                  </span>
-                  {hasMultiple && (
-                    <>
-                      <button
-                        type="button"
-                        onClick={prevModal}
-                        aria-label="Imagen anterior"
-                        className="absolute left-0 top-0 h-full w-1/5 flex items-center justify-start pl-4 z-10 group/arrow"
-                      >
-                        <span className="bg-background/80 backdrop-blur text-foreground p-2 rounded-full hover:bg-background transition-elegant">
-                          <ChevronLeft className="h-5 w-5" />
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={nextModal}
-                        aria-label="Imagen siguiente"
-                        className="absolute right-0 top-0 h-full w-1/5 flex items-center justify-end pr-4 z-10 group/arrow"
-                      >
-                        <span className="bg-background/80 backdrop-blur text-foreground p-2 rounded-full hover:bg-background transition-elegant">
-                          <ChevronRight className="h-5 w-5" />
-                        </span>
-                      </button>
-                      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-                        {imgs.map((_, i) => (
-                          <span
-                            key={i}
-                            className={`h-1.5 w-1.5 rounded-full transition-elegant ${
-                              i === modalIndex ? "bg-background" : "bg-background/50"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
+              <div className="flex flex-col relative">
+                <DialogClose
+                  aria-label="Cerrar"
+                  className="absolute right-3 top-3 z-30 bg-black/50 hover:bg-black/70 text-white rounded-full p-2.5 transition-elegant focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
+                  <X className="h-7 w-7" strokeWidth={2.5} />
+                </DialogClose>
 
-                {hasMultiple && (
-                  <div className="px-6 pt-4 pb-2 border-b border-border">
-                    <div className="flex gap-2 overflow-x-auto scrollbar-thin">
-                      {imgs.map((img, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          onClick={() => setModalIndex(i)}
-                          className={`flex-shrink-0 w-20 h-20 overflow-hidden transition-elegant ${
-                            i === modalIndex
-                              ? "ring-2 ring-jungle opacity-100"
-                              : "opacity-60 hover:opacity-100"
-                          }`}
-                          aria-label={`Ver imagen ${i + 1}`}
-                        >
-                          <img src={img} alt={`${selected.title} ${i + 1}`} className="h-full w-full object-cover" />
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <ModalGallery images={imgs} title={selected.title} />
 
                 <div className="p-8 md:p-10 flex flex-col">
                   <DialogHeader className="text-left space-y-2">
@@ -291,3 +145,230 @@ const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) =
 };
 
 export default Properties;
+
+/* ----------------------------- Subcomponents ----------------------------- */
+
+type PropertyCardProps = {
+  property: Property;
+  onOpen: (p: Property) => void;
+};
+
+const PropertyCard = ({ property, onOpen }: PropertyCardProps) => {
+  const imgs = property.images.length > 0 ? property.images : [property.img];
+  const hasMultiple = imgs.length > 1;
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [selectedIdx, setSelectedIdx] = useState(0);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIdx(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      emblaApi?.scrollPrev();
+    },
+    [emblaApi],
+  );
+  const scrollNext = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      emblaApi?.scrollNext();
+    },
+    [emblaApi],
+  );
+
+  return (
+    <article className="group bg-card shadow-card overflow-hidden transition-elegant hover:shadow-elegant text-left">
+      <div className="relative overflow-hidden aspect-[4/5]">
+        <div ref={emblaRef} className="overflow-hidden h-full">
+          <div className="flex h-full touch-pan-y">
+            {imgs.map((src, i) => (
+              <div
+                key={i}
+                className="relative flex-[0_0_100%] min-w-0 h-full cursor-pointer"
+                onClick={() => onOpen(property)}
+              >
+                <img
+                  src={src}
+                  alt={`${property.title} ${i + 1}`}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="h-full w-full object-cover transition-elegant group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <span className="absolute top-4 left-4 bg-background/90 backdrop-blur text-[10px] tracking-luxe uppercase px-3 py-1.5 text-foreground z-10 pointer-events-none">
+          En venta
+        </span>
+
+        {hasMultiple && (
+          <>
+            <button
+              type="button"
+              onClick={scrollPrev}
+              aria-label="Imagen anterior"
+              className="absolute left-0 top-0 h-full w-1/5 flex items-center justify-start pl-3 z-10"
+            >
+              <span className="bg-background/80 backdrop-blur text-foreground p-1.5 rounded-full md:opacity-0 md:group-hover:opacity-100 transition-elegant">
+                <ChevronLeft className="h-4 w-4" />
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={scrollNext}
+              aria-label="Imagen siguiente"
+              className="absolute right-0 top-0 h-full w-1/5 flex items-center justify-end pr-3 z-10"
+            >
+              <span className="bg-background/80 backdrop-blur text-foreground p-1.5 rounded-full md:opacity-0 md:group-hover:opacity-100 transition-elegant">
+                <ChevronRight className="h-4 w-4" />
+              </span>
+            </button>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 pointer-events-none">
+              {imgs.map((_, i) => (
+                <span
+                  key={i}
+                  className={`h-1.5 w-1.5 rounded-full transition-elegant ${
+                    i === selectedIdx ? "bg-background" : "bg-background/50"
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="p-7 cursor-pointer" onClick={() => onOpen(property)}>
+        <p className="text-jungle-soft text-[11px] tracking-luxe uppercase mb-2">
+          {property.location}
+        </p>
+        <h3 className="font-serif text-2xl text-foreground mb-3">{property.title}</h3>
+        <p className="text-muted-foreground text-sm mb-5">{property.specs}</p>
+        <div className="flex items-center justify-between border-t border-border pt-4">
+          <span className="font-serif text-lg text-foreground">{property.price}</span>
+          <span className="text-xs tracking-luxe uppercase text-jungle group-hover:text-gold transition-colors">
+            Detalles →
+          </span>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+type ModalGalleryProps = {
+  images: string[];
+  title: string;
+};
+
+const ModalGallery = ({ images, title }: ModalGalleryProps) => {
+  const hasMultiple = images.length > 1;
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [thumbsRef, thumbsApi] = useEmblaCarousel({
+    containScroll: "keepSnaps",
+    dragFree: true,
+  });
+  const [selectedIdx, setSelectedIdx] = useState(0);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => {
+      const idx = emblaApi.selectedScrollSnap();
+      setSelectedIdx(idx);
+      thumbsApi?.scrollTo(idx);
+    };
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, thumbsApi]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const onThumbClick = useCallback(
+    (i: number) => emblaApi?.scrollTo(i),
+    [emblaApi],
+  );
+
+  return (
+    <div className="flex flex-col">
+      <div className="relative bg-muted">
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex touch-pan-y">
+            {images.map((src, i) => (
+              <div key={i} className="flex-[0_0_100%] min-w-0 flex items-center justify-center bg-muted">
+                <img
+                  src={src}
+                  alt={`${title} ${i + 1}`}
+                  className="w-full h-auto max-h-[70vh] object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <span className="absolute top-4 left-4 bg-background/90 backdrop-blur text-[10px] tracking-luxe uppercase px-3 py-1.5 text-foreground z-10">
+          En venta
+        </span>
+
+        {hasMultiple && (
+          <>
+            <button
+              type="button"
+              onClick={scrollPrev}
+              aria-label="Imagen anterior"
+              className="absolute left-0 top-0 h-full w-1/5 flex items-center justify-start pl-3 md:pl-4 z-10"
+            >
+              <span className="bg-background/80 backdrop-blur text-foreground p-2 rounded-full hover:bg-background transition-elegant">
+                <ChevronLeft className="h-5 w-5" />
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={scrollNext}
+              aria-label="Imagen siguiente"
+              className="absolute right-0 top-0 h-full w-1/5 flex items-center justify-end pr-3 md:pr-4 z-10"
+            >
+              <span className="bg-background/80 backdrop-blur text-foreground p-2 rounded-full hover:bg-background transition-elegant">
+                <ChevronRight className="h-5 w-5" />
+              </span>
+            </button>
+          </>
+        )}
+      </div>
+
+      {hasMultiple && (
+        <div className="px-6 pt-4 pb-2 border-b border-border">
+          <div ref={thumbsRef} className="overflow-hidden">
+            <div className="flex gap-2 touch-pan-y">
+              {images.map((img, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => onThumbClick(i)}
+                  className={`flex-shrink-0 w-20 h-20 overflow-hidden transition-elegant ${
+                    i === selectedIdx
+                      ? "ring-2 ring-jungle opacity-100"
+                      : "opacity-60 hover:opacity-100"
+                  }`}
+                  aria-label={`Ver imagen ${i + 1}`}
+                >
+                  <img src={img} alt={`${title} ${i + 1}`} className="h-full w-full object-cover" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
