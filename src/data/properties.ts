@@ -16,7 +16,6 @@ export type Property = {
   sqft: number;
   images: string[];
   // Compatibilidad con el componente actual
-  img: string;
   name: string;
   specs: string;
 };
