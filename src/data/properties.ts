@@ -32,7 +32,9 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     sqft: 90.73,
-    images: [https://cdn.shopify.com/s/files/1/0760/1799/1845/files/43_6c961a8a-359d-421d-81b5-d6fd1e1b0ccb.png?v=1775508320],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/43_6c961a8a-359d-421d-81b5-d6fd1e1b0ccb.png?v=1775508320",
+    ],
     img: "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/43_6c961a8a-359d-421d-81b5-d6fd1e1b0ccb.png?v=1775508320",
     name: "Distrito Playa",
     location: "10a Avenida Norte, Playa del Carmen, Quintana Roo",
