@@ -19,16 +19,9 @@ type PropertiesProps = {
 const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) => {
   const [expanded, setExpanded] = useState(false);
   const [selected, setSelected] = useState<Property | null>(null);
-  const [cardIndexes, setCardIndexes] = useState<Record<string, number>>({});
-  const [modalIndex, setModalIndex] = useState(0);
-
-  const getCardIndex = (id: string) => cardIndexes[id] ?? 0;
-  const setCardIndex = (id: string, idx: number) =>
-    setCardIndexes((prev) => ({ ...prev, [id]: idx }));
 
   const openProperty = (p: Property) => {
     setSelected(p);
-    setModalIndex(0);
   };
 
   const visible = showAll
