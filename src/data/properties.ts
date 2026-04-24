@@ -16,6 +16,7 @@ export type Property = {
   sqft: number;
   images: string[];
   // Compatibilidad con el componente actual
+  img: string;
   name: string;
   specs: string;
 };
@@ -32,9 +33,11 @@ export const properties: Property[] = [
     baths: 2,
     sqft: 90.73,
     images: [
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/43_6c961a8a-359d-421d-81b5-d6fd1e1b0ccb.png?v=1775508320",
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/1_303aedfd-b7e5-4a06-907a-06575dc2bb0c.png?v=1775509647",
+      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/FACHADA_1.jpg?v=1777060869",
+      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/TOMA_AEREA_FACHADA.jpg?v=1777060869",
+      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/lobby.png?v=1777060873",
     ],
+    img: "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/43_6c961a8a-359d-421d-81b5-d6fd1e1b0ccb.png?v=1775508320"
     name: "Distrito Playa",
     location: "10a Avenida Norte, Playa del Carmen, Quintana Roo",
     price: "USD $315,000",
