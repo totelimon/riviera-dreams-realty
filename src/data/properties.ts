@@ -25,19 +25,19 @@ const buildSpecs = (beds: number, baths: number, sqft: number) => `${beds} Rec �
 
 export const properties: Property[] = [
   {
-    id: "casa-turquesa",
-    title: "Casa Turquesa",
+    id: "distrito-playa-104",
+    title: "Distrito Playa, Dept 104",
     description:
-      "Residencia contemporánea en Playacar Fase II, con piscina privada, jardines tropicales y acabados en chukum. A pasos de la playa y el club de golf.",
-    beds: 4,
-    baths: 4.5,
-    sqft: 520,
+      "Departamento de 2 recámaras con vista frontal en edificio de usos mixtos frente a 10a Avenida Norte, Playa del Carmen. Acabados en mármol travertino, cocina equipada con granito, walk-in closet y balcón. Rooftop con alberca, jacuzzi y gimnasio.",
+    beds: 2,
+    baths: 2,
+    sqft: 90.73,
     images: [p1, p2, p3],
     img: p1,
-    name: "Casa Turquesa",
-    location: "Playacar Fase II",
-    price: "USD 1,450,000",
-    specs: buildSpecs(4, 4.5, 520),
+    name: "Distrito Playa",
+    location: "10a Avenida Norte, Playa del Carmen, Quintana Roo",
+    price: "USD $315,000",
+    specs: buildSpecs(2, 2, 90.73),
   },
   {
     id: "villa-sakbe",
