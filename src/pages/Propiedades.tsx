@@ -13,7 +13,7 @@ const Propiedades = () => {
         title="Propiedades de alta gama en la Riviera Maya."
         description="Una selección curada de residencias, villas y penthouses en Playa del Carmen, Tulum, Mayakoba y Akumal."
       />
-      <Properties showAll hideHeading />
+      <Properties hideHeading />
       <LeadForm />
       <Footer />
     </main>
