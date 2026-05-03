@@ -35,6 +35,10 @@ const second_apt = [
   "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_152234.png?v=1777065763",
 ];
 
+const second_apt1 = [
+  "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/Captura_de_pantalla_2026-04-24_152234.png?v=1777065763",
+];
+
 export const properties: Property[] = [
   // ── DISTRITO PLAYA ────────────────────────────────────────────────
   {
@@ -61,7 +65,7 @@ export const properties: Property[] = [
     baths: 2,
     sqft: 90.73,
     images: second_apt,
-    img: second_apt,
+    img: second_apt1,
     name: "Distrito Playa",
     location: "10ma Avenida Norte, Playa del Carmen, Quintana Roo",
     price: "USD $329,241",
