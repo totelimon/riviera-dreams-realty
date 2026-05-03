@@ -25,11 +25,12 @@ const Properties = ({ showAll = false, hideHeading = false }: PropertiesProps) =
     setSelected(p);
   };
 
+  const sorted = [...properties].sort((a, b) => b.priceValue - a.priceValue);
   const visible = showAll
-    ? properties
+    ? sorted
     : expanded
-    ? properties.slice(0, 6)
-    : properties.slice(0, 3);
+    ? sorted.slice(0, 6)
+    : sorted.slice(0, 6);
 
   const scrollToContact = () => {
     setSelected(null);
