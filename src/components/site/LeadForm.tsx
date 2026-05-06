@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import leaves from "@/assets/leaves-bg.jpg";
+import leadVideo from "@/assets/lead-bg.mp4";
 import { supabase } from "@/integrations/supabase/client";
 
 type Errors = Partial<Record<"nombre" | "apellido" | "email" | "telefono", string>>;
@@ -95,14 +95,15 @@ const LeadForm = () => {
   return (
     <section id="contacto" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={leaves}
-          alt=""
-          aria-hidden
-          loading="lazy"
+        <video
+          src={leadVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-jungle/85" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="relative container grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
