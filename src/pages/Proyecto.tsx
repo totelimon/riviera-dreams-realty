@@ -250,7 +250,7 @@ const ModelPanel = ({ model }: { model: UnitModel }) => {
         {model.units.length > 1 && (
           <div className="mt-7">
             <p className="text-jungle text-[11px] tracking-luxe uppercase mb-3">
-              Selecciona una unidad ({model.units.length} disponibles)
+              Selecciona piso y luego unidad del piso correspondiente ({model.units.length} disponibles)
             </p>
             <div className="flex flex-wrap gap-2">
               {model.units.map((u) => {
