@@ -37,7 +37,7 @@ const Proyecto = () => {
         <img
           src={project.hero}
           alt={project.name}
-          className="absolute inset-0 w-full h-full object-cover scale-105 animate-[slowZoom_25s_ease-in-out_infinite_alternate]"
+          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/80" />
         <div className="relative h-full container flex flex-col justify-end pb-16 md:pb-24">
@@ -194,7 +194,7 @@ const ModelPanel = ({ model }: { model: UnitModel }) => {
   const src = tab === "render" ? model.render ?? model.images[0] : model.plan ?? model.images[0];
 
   return (
-    <div className="bg-card border border-border shadow-card overflow-hidden animate-fade-in">
+    <div className="bg-card border border-border shadow-card overflow-hidden animate-fade-up">
       <div className="relative aspect-[16/10] bg-muted overflow-hidden">
         <img
           src={src}
