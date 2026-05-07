@@ -187,13 +187,13 @@ const RAW_PROJECTS = [
       "Seguridad 24/7",
       "Amenidades premium"
     ],
-    "available": 16,
-    "total": 16,
+    "available": 17,
+    "total": 57,
     "models": [
       {
         "id": "distrito-norte-t4",
-        "letter": "4",
-        "name": "Modelo terminación 4",
+        "letter": "A",
+        "name": "Modelo Mar",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
@@ -242,8 +242,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-norte-t2",
-        "letter": "2",
-        "name": "Modelo terminación 2",
+        "letter": "B",
+        "name": "Modelo Coral",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · 65.0 m²",
         "beds": 1,
@@ -274,8 +274,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-norte-t6",
-        "letter": "6",
-        "name": "Modelo terminación 6",
+        "letter": "C",
+        "name": "Modelo Brisa",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
@@ -306,8 +306,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-norte-t1",
-        "letter": "1",
-        "name": "Modelo terminación 1",
+        "letter": "D",
+        "name": "Modelo Sol",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · 62.0 m²",
         "beds": 1,
@@ -329,8 +329,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-norte-t7",
-        "letter": "7",
-        "name": "Modelo terminación 7",
+        "letter": "E",
+        "name": "Modelo Palma",
         "type": "Departamento",
         "shortInfo": "2 rec · 3 baños · 137.0 m²",
         "beds": 2,
@@ -370,8 +370,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-norte-t5",
-        "letter": "5",
-        "name": "Modelo terminación 5",
+        "letter": "F",
+        "name": "Modelo Ceiba",
         "type": "Departamento",
         "shortInfo": "3 rec · 3 baños · 128.72 m²",
         "beds": 3,
@@ -394,7 +394,7 @@ const RAW_PROJECTS = [
       {
         "id": "distrito-norte-premium",
         "letter": "PH",
-        "name": "Penthouse 401/406",
+        "name": "Penthouse Cielo",
         "type": "Penthouse",
         "shortInfo": "Penthouse · orientaciones distintas",
         "beds": 4,
@@ -465,13 +465,13 @@ const RAW_PROJECTS = [
       "Restaurantes y bistro",
       "Bicisendas internas"
     ],
-    "available": 52,
-    "total": 52,
+    "available": 51,
+    "total": 121,
     "models": [
       {
         "id": "musa-del-puerto-impar",
-        "letter": "Impar",
-        "name": "Modelo terminación impar",
+        "letter": "A",
+        "name": "Modelo Arena",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
@@ -646,8 +646,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "musa-del-puerto-par",
-        "letter": "Par",
-        "name": "Modelo terminación par",
+        "letter": "B",
+        "name": "Modelo Mareas",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
@@ -921,8 +921,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "musa-del-puerto-t16",
-        "letter": "16",
-        "name": "Modelo terminación 16",
+        "letter": "C",
+        "name": "Modelo Caracola",
         "type": "Departamento",
         "shortInfo": "3 rec · 2 baños · 118.0 m²",
         "beds": 3,
@@ -962,8 +962,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "musa-del-puerto-t17",
-        "letter": "17",
-        "name": "Modelo terminación 17",
+        "letter": "D",
+        "name": "Modelo Conchas",
         "type": "Departamento",
         "shortInfo": "1 rec · 1 baños · 51.0 m²",
         "beds": 1,
@@ -1025,13 +1025,13 @@ const RAW_PROJECTS = [
       "Senderos en selva nativa",
       "Diseño bioclimático"
     ],
-    "available": 62,
-    "total": 62,
+    "available": 73,
+    "total": 166,
     "models": [
       {
         "id": "distrito-arte-m01",
-        "letter": "01",
-        "name": "Modelo 01 · ambas torres",
+        "letter": "A",
+        "name": "Modelo Atelier",
         "type": "Departamento",
         "shortInfo": "126.0 m²",
         "beds": null,
@@ -1107,8 +1107,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-arte-m16-18",
-        "letter": "16/18",
-        "name": "Modelo 16 = 18",
+        "letter": "G",
+        "name": "Modelo Galería",
         "type": "Departamento",
         "shortInfo": "tamaños variados",
         "beds": null,
@@ -1184,8 +1184,8 @@ const RAW_PROJECTS = [
       },
       {
         "id": "distrito-arte-m15-17",
-        "letter": "15/17",
-        "name": "Modelo 15 = 17",
+        "letter": "S",
+        "name": "Modelo Estudio",
         "type": "Departamento",
         "shortInfo": "112.0 m²",
         "beds": null,
