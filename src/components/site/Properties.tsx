@@ -83,9 +83,9 @@ const Properties = ({ hideHeading = false }: PropertiesProps) => {
     <section id="propiedades" className="py-24 md:py-32 bg-gradient-chukum">
       <div className="container">
         {!hideHeading && (
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
             <div>
-              <p className="text-jungle text-xs tracking-luxe uppercase mb-4">
+              <p className="text-jungle text-xs tracking-luxe uppercase mb-2">
                 Selección curada
               </p>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground max-w-2xl text-balance">
@@ -93,8 +93,7 @@ const Properties = ({ hideHeading = false }: PropertiesProps) => {
               </h2>
             </div>
             <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
-              Cuatro destinos exclusivos en el Caribe mexicano. Explora cada
-              edificio y descubre las unidades disponibles antes de que se agoten.
+              Cuatro destinos exclusivos en el Caribe mexicano.
             </p>
           </div>
         )}
