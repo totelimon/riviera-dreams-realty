@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { to: "/", label: "Inicio" },
   { to: "/propiedades", label: "Propiedades" },
   { to: "/nosotros", label: "Nosotros" },
   { to: "/servicios", label: "Servicios" },
-  { to: "#contacto", label: "Contacto", scrollTo: "contacto" as const },
+  { to: "/contacto", label: "Contacto" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   // On non-home pages we don't have a dark hero, so always render the
   // surface (light bg + dark text) variant to keep the nav legible.
@@ -35,15 +35,6 @@ const Navbar = () => {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  const goToContact = (id: string) => {
-    setOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: id } });
-      return;
-    }
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const onSurface = scrolled || open || !isHome;
 
@@ -86,18 +77,9 @@ const Navbar = () => {
         >
           {links.map((l) => (
             <li key={l.label}>
-              {"scrollTo" in l && l.scrollTo ? (
-                <button
-                  onClick={() => goToContact(l.scrollTo)}
-                  className="hover:text-gold transition-colors uppercase tracking-luxe"
-                >
-                  {l.label}
-                </button>
-              ) : (
-                <Link to={l.to} className="hover:text-gold transition-colors">
-                  {l.label}
-                </Link>
-              )}
+              <Link to={l.to} className="hover:text-gold transition-colors">
+                {l.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -105,8 +87,8 @@ const Navbar = () => {
         {/* Spacer on mobile to balance burger */}
         <span className="md:hidden w-6" aria-hidden />
 
-        <button
-          onClick={() => goToContact("contacto")}
+        <Link
+          to="/agendar"
           className={`hidden md:inline-block text-xs tracking-luxe uppercase border px-5 py-3 transition-elegant ${
             scrolled
               ? "border-foreground/40 text-foreground hover:bg-foreground hover:text-background"
@@ -114,7 +96,7 @@ const Navbar = () => {
           }`}
         >
           Agendar visita
-        </button>
+        </Link>
       </nav>
 
       {/* Mobile drawer */}
@@ -126,31 +108,23 @@ const Navbar = () => {
         <ul className="container flex flex-col py-6 gap-1 text-sm tracking-luxe uppercase text-foreground">
           {links.map((l) => (
             <li key={l.label}>
-              {"scrollTo" in l && l.scrollTo ? (
-                <button
-                  onClick={() => goToContact(l.scrollTo)}
-                  className="block w-full text-left py-4 border-b border-border/60 hover:text-gold transition-colors"
-                >
-                  {l.label}
-                </button>
-              ) : (
-                <Link
-                  to={l.to}
-                  onClick={() => setOpen(false)}
-                  className="block py-4 border-b border-border/60 hover:text-gold transition-colors"
-                >
-                  {l.label}
-                </Link>
-              )}
+              <Link
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="block py-4 border-b border-border/60 hover:text-gold transition-colors"
+              >
+                {l.label}
+              </Link>
             </li>
           ))}
           <li className="pt-6">
-            <button
-              onClick={() => goToContact("contacto")}
+            <Link
+              to="/agendar"
+              onClick={() => setOpen(false)}
               className="block w-full text-center text-xs tracking-luxe uppercase border border-foreground/40 text-foreground hover:bg-foreground hover:text-background px-5 py-4 transition-elegant"
             >
               Agendar visita
-            </button>
+            </Link>
           </li>
         </ul>
       </div>
