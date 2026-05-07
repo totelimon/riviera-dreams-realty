@@ -66,41 +66,6 @@ const Proyecto = () => {
         </div>
       </section>
 
-      {/* DESCRIPTION + HIGHLIGHTS */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="container grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-7">
-            <p className="text-jungle text-xs tracking-luxe uppercase mb-4">
-              El desarrollo
-            </p>
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground leading-tight text-balance">
-              {project.tagline}
-            </h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed text-base md:text-lg">
-              {project.description}
-            </p>
-          </div>
-          <div className="lg:col-span-5">
-            <div className="bg-card border border-border p-8 md:p-10">
-              <p className="text-jungle text-[11px] tracking-luxe uppercase mb-5 flex items-center gap-2">
-                <Sparkles className="h-4 w-4" /> Highlights
-              </p>
-              <ul className="space-y-4">
-                {project.highlights.map((h) => (
-                  <li
-                    key={h}
-                    className="flex gap-3 text-foreground border-b border-border/60 pb-4 last:border-0 last:pb-0"
-                  >
-                    <span className="text-gold mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                    <span className="text-sm leading-relaxed">{h}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* MODELS */}
       <section className="py-20 md:py-28 bg-gradient-chukum">
         <div className="container">
@@ -169,6 +134,41 @@ const Proyecto = () => {
             {/* Active model panel */}
             <div className="lg:col-span-8">
               {active && <ModelPanel model={active} key={active.id} />}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DESCRIPTION + HIGHLIGHTS */}
+      <section className="py-14 md:py-20 bg-background">
+        <div className="container grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-7">
+            <p className="text-jungle text-xs tracking-luxe uppercase mb-4">
+              El desarrollo
+            </p>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground leading-tight text-balance">
+              {project.tagline}
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed text-base md:text-lg">
+              {project.description}
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <div className="bg-card border border-border p-8 md:p-10">
+              <p className="text-jungle text-[11px] tracking-luxe uppercase mb-5 flex items-center gap-2">
+                <Sparkles className="h-4 w-4" /> Highlights
+              </p>
+              <ul className="space-y-4">
+                {project.highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="flex gap-3 text-foreground border-b border-border/60 pb-4 last:border-0 last:pb-0"
+                  >
+                    <span className="text-gold mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                    <span className="text-sm leading-relaxed">{h}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
