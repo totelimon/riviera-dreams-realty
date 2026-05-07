@@ -187,9 +187,8 @@ const RAW_PROJECTS = [
       "Seguridad 24/7",
       "Amenidades premium"
     ],
-    "available": 16,
-    "total": 16,
-    
+    "available": 17,
+    "total": 57,
     "models": [
       {
         "id": "distrito-norte-t4",
@@ -466,8 +465,8 @@ const RAW_PROJECTS = [
       "Restaurantes y bistro",
       "Bicisendas internas"
     ],
-    "available": 52,
-    "total": 52,
+    "available": 51,
+    "total": 121,
     "models": [
       {
         "id": "musa-del-puerto-impar",
@@ -1026,8 +1025,8 @@ const RAW_PROJECTS = [
       "Senderos en selva nativa",
       "Diseño bioclimático"
     ],
-    "available": 62,
-    "total": 62,
+    "available": 73,
+    "total": 166,
     "models": [
       {
         "id": "distrito-arte-m01",
