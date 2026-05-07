@@ -80,7 +80,7 @@ const Properties = ({ hideHeading = false }: PropertiesProps) => {
   };
 
   return (
-    <section id="propiedades" className="py-24 md:py-32 bg-gradient-chukum">
+    <section id="propiedades" className="pt-10 pb-24 md:pt-16 md:pb-32 bg-gradient-chukum">
       <div className="container">
         {!hideHeading && (
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
