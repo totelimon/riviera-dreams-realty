@@ -11,7 +11,7 @@ const leader = {
   name: "Marta Marcilla Alonso",
   role: "Líder empresarial",
   image:
-    "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/503674789_18508109932027624_212475279525263594_n.jpg?v=1777234430",
+    "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/LUMEA_8.png?v=1778163646",
   instagram: "marta.marcilla",
   bio: "Con más de 20 años de experiencia en el sector inmobiliario de la Riviera Maya, Marta es una líder referente como mujer en la industria. Ha acompañado a inversionistas internacionales en operaciones de alto valor, distinguiéndose por su visión estratégica, integridad y compromiso con cada cliente.",
 };
