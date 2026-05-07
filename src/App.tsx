@@ -9,6 +9,7 @@ import Nosotros from "./pages/Nosotros.tsx";
 import Servicios from "./pages/Servicios.tsx";
 import Contacto from "./pages/Contacto.tsx";
 import Agendar from "./pages/Agendar.tsx";
+import Proyecto from "./pages/Proyecto.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import WhatsAppPopup from "./components/site/WhatsAppPopup";
 import ScrollToTop from "./components/site/ScrollToTop";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/agendar" element={<Agendar />} />
+          <Route path="/proyecto/:slug" element={<Proyecto />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

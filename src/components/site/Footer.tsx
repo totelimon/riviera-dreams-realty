@@ -12,7 +12,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] tracking-luxe uppercase text-gold mb-4">Oficina</h4>
+          <h4 className="text-base md:text-lg tracking-luxe uppercase text-gold mb-4 font-serif">Oficina</h4>
           <p className="text-sm text-primary-foreground/80 leading-relaxed">
             Quinta Avenida 320<br />
             Playa del Carmen, Q. Roo<br />
@@ -20,7 +20,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] tracking-luxe uppercase text-gold mb-4">Contacto</h4>
+          <h4 className="text-base md:text-lg tracking-luxe uppercase text-gold mb-4 font-serif">Contacto</h4>
           <p className="text-sm text-primary-foreground/80 leading-relaxed">
             +52 984 123 4567<br />
             hola@selvamar.mx

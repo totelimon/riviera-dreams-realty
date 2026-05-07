@@ -6,7 +6,6 @@ const MESSAGE = "Hola Selva·Mar, me interesa recibir información sobre sus pro
 
 const WhatsAppPopup = () => {
   const [open, setOpen] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setOpen(true), 5000);
@@ -15,15 +14,13 @@ const WhatsAppPopup = () => {
 
   const href = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
 
-  if (dismissed) return null;
-
   return (
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3">
       {open && (
-        <div className="relative bg-background shadow-elegant border border-border p-4 pr-9 max-w-[260px] animate-fade-in">
+        <div className="relative bg-background shadow-elegant border border-border p-4 pr-9 max-w-[260px] animate-fade-up">
           <button
             aria-label="Cerrar"
-            onClick={() => setDismissed(true)}
+            onClick={() => setOpen(false)}
             className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
           >
             <X className="h-4 w-4" />
