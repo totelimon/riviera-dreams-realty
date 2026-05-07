@@ -96,6 +96,14 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile drawer */}
+      {/* Backdrop to close on outside click */}
+      <div
+        onClick={() => setOpen(false)}
+        className={`md:hidden fixed inset-0 top-[56px] bg-black/40 transition-opacity ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden
+      />
       <div
         className={`md:hidden fixed inset-x-0 top-[56px] bg-background border-t border-border/60 transition-elegant overflow-hidden ${
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
