@@ -8,6 +8,7 @@ import Propiedades from "./pages/Propiedades.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 import Servicios from "./pages/Servicios.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import WhatsAppPopup from "./components/site/WhatsAppPopup";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
