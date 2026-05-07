@@ -19,8 +19,6 @@ export type Property = {
 const buildSpecs = (beds: number, baths: number, sqft: number) => `${beds} Rec · ${baths} Baños · ${sqft} m²`;
 
 export const properties: Property[] = [
-  {
-    id: "distrito-playa-104",
     title: "Distrito Playa, Unidad 104",
     description: "Espacioso departamento frontal de 2 recámaras con Walk-in Closet y balcón. Ubicado en el proyecto Distrito Playa.",
     price: "USD $315,000",
