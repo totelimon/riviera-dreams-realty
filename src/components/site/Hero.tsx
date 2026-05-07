@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-villa.jpg";
-import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const imgRef = useRef<HTMLImageElement | null>(null);
@@ -29,11 +28,6 @@ const Hero = () => {
   };
 
   const scrollToProperties = (e: React.MouseEvent) => {
-    e.preventDefault();
-    document.getElementById("propiedades")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollDown = (e: React.MouseEvent) => {
     e.preventDefault();
     document.getElementById("propiedades")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -84,23 +78,6 @@ const Hero = () => {
           </a>
         </div>
       </div>
-
-      <a
-        href="#propiedades"
-        onClick={scrollDown}
-        aria-label="Descubre más"
-        className="group absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-background/70 hover:text-background text-[10px] tracking-luxe uppercase reveal reveal-delay-4 transition-colors"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span>Descubre más</span>
-          <span className="relative block h-10 w-px bg-background/50">
-            <ChevronDown
-              className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-4 w-4 animate-bounce"
-              strokeWidth={1.5}
-            />
-          </span>
-        </div>
-      </a>
     </section>
   );
 };
