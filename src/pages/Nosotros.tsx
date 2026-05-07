@@ -16,6 +16,32 @@ const values = [
   { title: "Acompañamiento", text: "Estamos contigo de la búsqueda a la entrega de llaves." },
 ];
 
+const stats = [
+  { value: "25+", label: "Años de experiencia" },
+  { value: "650", label: "Propiedades vendidas" },
+  { value: "USD 1.2B", label: "En transacciones" },
+  { value: "98%", label: "Clientes recomendados" },
+];
+
+const expertise = [
+  {
+    title: "Inversión patrimonial",
+    text: "Diseñamos estrategias para preservar y multiplicar el capital de nuestros clientes a través de bienes raíces de alto valor.",
+  },
+  {
+    title: "Family offices",
+    text: "Trabajamos con oficinas familiares europeas y americanas que buscan diversificar en el Caribe mexicano.",
+  },
+  {
+    title: "Renta vacacional premium",
+    text: "Conectamos propietarios con operadores boutique para maximizar el rendimiento sin perder exclusividad.",
+  },
+  {
+    title: "Relocalización",
+    text: "Acompañamos a profesionales y familias que se mudan a la Riviera Maya, integrando bienes raíces con estilo de vida.",
+  },
+];
+
 const Nosotros = () => {
   return (
     <main className="min-h-screen bg-background">
@@ -45,7 +71,7 @@ const Nosotros = () => {
           <div className="md:col-span-4">
             <div className="aspect-square w-48 md:w-full max-w-xs overflow-hidden rounded-full mx-auto md:mx-0">
               <img
-                src="https://cdn.shopify.com/s/files/1/0760/1799/1845/files/503674789_18508109932027624_212475279525263594_n.jpg?v=1777234430"
+                src="https://cdn.shopify.com/s/files/1/0760/1799/1845/files/LUMEA_8.png?v=1778163646"
                 alt="Marta Marcilla Alonso"
                 className="w-full h-full object-cover"
               />
@@ -54,13 +80,26 @@ const Nosotros = () => {
           <div className="md:col-span-8">
             <p className="text-jungle text-[11px] tracking-luxe uppercase mb-3">Líder empresarial</p>
             <h2 className="font-serif text-3xl md:text-5xl text-foreground">Marta Marcilla Alonso</h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">
-              Con más de 20 años de experiencia en el sector inmobiliario de la
-              Riviera Maya, Marta es una líder referente como mujer en la
-              industria. Ha acompañado a inversionistas internacionales en
-              operaciones de alto valor, distinguiéndose por su visión
-              estratégica, integridad y compromiso con cada cliente.
-            </p>
+            <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
+              <p>
+                Con más de 20 años de experiencia en el sector inmobiliario de la
+                Riviera Maya, Marta es una líder referente como mujer en la
+                industria. Ha acompañado a inversionistas internacionales en
+                operaciones de alto valor, distinguiéndose por su visión
+                estratégica, integridad y compromiso con cada cliente.
+              </p>
+              <p>
+                Originaria de España y radicada en Playa del Carmen desde hace dos
+                décadas, Marta ha construido una red única de desarrolladores,
+                arquitectos, notarios y family offices que respalda cada operación
+                con confianza absoluta.
+              </p>
+              <p>
+                Su filosofía: cada cliente es un proyecto de vida. Por eso, las
+                operaciones que lidera nacen de la escucha activa y se consolidan
+                con un acompañamiento cercano de principio a fin.
+              </p>
+            </div>
             <a
               href="https://instagram.com/marta.marcilla"
               target="_blank"
@@ -70,6 +109,47 @@ const Nosotros = () => {
               <Instagram className="h-4 w-4" />
               <span>@marta.marcilla</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="py-16 md:py-20 bg-jungle text-background">
+        <div className="container grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center md:text-left">
+              <div className="font-serif text-4xl md:text-5xl text-gold">{s.value}</div>
+              <div className="mt-2 text-[11px] tracking-luxe uppercase text-background/70">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Expertise */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <div className="max-w-2xl mb-12">
+            <p className="text-jungle text-xs tracking-luxe uppercase mb-3">Nuestra expertise</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight text-balance">
+              Más que una asesoría inmobiliaria.
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Combinamos visión estratégica con un conocimiento profundo del
+              mercado local para entregar resultados extraordinarios.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+            {expertise.map((e) => (
+              <div
+                key={e.title}
+                className="bg-card border border-border p-8 hover:shadow-elegant transition-elegant"
+              >
+                <h3 className="font-serif text-2xl text-foreground mb-3">{e.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{e.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

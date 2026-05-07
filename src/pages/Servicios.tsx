@@ -35,13 +35,14 @@ const Servicios = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="pt-40 pb-16 md:pt-48 md:pb-24 bg-chukum/30">
-        <div className="container max-w-3xl text-center">
-          <p className="text-jungle text-xs tracking-luxe uppercase mb-5">Nuestros servicios</p>
-          <h1 className="font-serif text-4xl md:text-6xl text-foreground leading-[1.05] text-balance">
+      <section className="relative pt-40 pb-16 md:pt-48 md:pb-24 bg-jungle text-background overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--gold)/0.4),transparent_60%)]" />
+        <div className="container relative max-w-3xl text-center">
+          <p className="text-gold text-xs tracking-luxe uppercase mb-5">Nuestros servicios</p>
+          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance">
             Una asesoría integral, de la búsqueda a la entrega de llaves.
           </h1>
-          <p className="mt-6 text-muted-foreground text-base md:text-lg leading-relaxed">
+          <p className="mt-6 text-background/80 text-base md:text-lg leading-relaxed">
             Acompañamos cada etapa del proceso inmobiliario con un estándar de
             servicio sin compromisos.
           </p>
@@ -57,9 +58,9 @@ const Servicios = () => {
                 i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <div className="md:col-span-5">
-                <div className="aspect-[4/5] bg-gradient-jungle flex items-center justify-center">
-                  <s.icon className="h-20 w-20 text-background/90" strokeWidth={1} />
+              <div className="md:col-span-5 flex justify-center md:justify-start">
+                <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-jungle flex items-center justify-center shadow-card">
+                  <s.icon className="h-14 w-14 md:h-16 md:w-16 text-background/90" strokeWidth={1} />
                 </div>
               </div>
               <div className="md:col-span-7">
