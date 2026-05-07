@@ -12,7 +12,7 @@ import {
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import LeadForm from "@/components/site/LeadForm";
-import { getProjectBySlug, type UnitModel } from "@/data/projects";
+import { getProjectBySlug, type UnitModel, type Unit } from "@/data/projects";
 
 const Proyecto = () => {
   const { slug } = useParams();
@@ -43,10 +43,10 @@ const Proyecto = () => {
         <div className="relative h-full container flex flex-col justify-end pb-16 md:pb-24">
           <Link
             to="/propiedades"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-gold text-[11px] tracking-luxe uppercase mb-8 transition-colors"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-gold hover:text-primary-foreground text-white border border-white/30 text-xs md:text-sm tracking-luxe uppercase mb-8 px-6 md:px-8 py-3 md:py-4 backdrop-blur-sm transition-elegant w-fit"
           >
-            <ChevronLeft className="h-4 w-4" />
-            Volver a desarrollos
+            <ChevronLeft className="h-5 w-5" />
+            Volver a los desarrollos
           </Link>
           <p className="text-gold text-xs tracking-luxe uppercase mb-4">
             {project.region}
@@ -67,7 +67,7 @@ const Proyecto = () => {
       </section>
 
       {/* DESCRIPTION + HIGHLIGHTS */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
             <p className="text-jungle text-xs tracking-luxe uppercase mb-4">
@@ -76,7 +76,7 @@ const Proyecto = () => {
             <h2 className="font-serif text-3xl md:text-5xl text-foreground leading-tight text-balance">
               {project.tagline}
             </h2>
-            <p className="mt-6 text-muted-foreground leading-relaxed text-base md:text-lg">
+            <p className="mt-5 text-muted-foreground leading-relaxed text-base md:text-lg">
               {project.description}
             </p>
           </div>
@@ -137,14 +137,14 @@ const Proyecto = () => {
                           isActive ? "text-gold" : "text-jungle"
                         }`}
                       >
-                        {m.type}
+                        {m.type} · {m.letter}
                       </span>
                       <span
                         className={`text-[10px] tracking-luxe uppercase ${
                           isActive ? "text-background/80" : "text-muted-foreground"
                         }`}
                       >
-                        {m.available} de {m.totalUnits}
+                        {m.available} disp.
                       </span>
                     </div>
                     <h3
@@ -191,7 +191,9 @@ const Stat = ({ label, value }: { label: string; value: string }) => (
 
 const ModelPanel = ({ model }: { model: UnitModel }) => {
   const [tab, setTab] = useState<"render" | "plano">("render");
-  const src = tab === "render" ? model.render ?? model.images[0] : model.plan ?? model.images[0];
+  const [selectedUnitId, setSelectedUnitId] = useState<string>(model.units[0]?.id ?? "");
+  const selectedUnit: Unit | undefined = model.units.find((u) => u.id === selectedUnitId) ?? model.units[0];
+  const src = tab === "render" ? model.render : model.plan;
 
   return (
     <div className="bg-card border border-border shadow-card overflow-hidden animate-fade-up">
@@ -224,7 +226,7 @@ const ModelPanel = ({ model }: { model: UnitModel }) => {
 
       <div className="p-7 md:p-10">
         <p className="text-jungle text-[11px] tracking-luxe uppercase mb-2">
-          {model.type}
+          {model.type} · Modelo {model.letter}
         </p>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h3 className="font-serif text-3xl md:text-4xl text-foreground">
@@ -234,25 +236,47 @@ const ModelPanel = ({ model }: { model: UnitModel }) => {
             <p className="text-[10px] tracking-luxe uppercase text-muted-foreground">
               Desde
             </p>
-            <p className="font-serif text-2xl text-jungle">{model.priceFrom}</p>
+            <p className="font-serif text-2xl text-jungle">{selectedUnit?.price ?? model.priceFrom}</p>
           </div>
         </div>
 
-        <p className="mt-5 text-muted-foreground leading-relaxed">
-          {model.description}
-        </p>
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-7 py-6 border-y border-border">
-          <Spec icon={<Bed className="h-4 w-4" />} label="Recámaras" value={`${model.beds}`} />
-          <Spec icon={<Bath className="h-4 w-4" />} label="Baños" value={`${model.baths}`} />
-          <Spec icon={<Maximize className="h-4 w-4" />} label="Superficie" value={`${model.sqft} m²`} />
-          <Spec icon={<Layers className="h-4 w-4" />} label="Pisos" value={model.floors} />
+          <Spec icon={<Bed className="h-4 w-4" />} label="Recámaras" value={selectedUnit?.beds != null ? `${selectedUnit.beds}` : "—"} />
+          <Spec icon={<Bath className="h-4 w-4" />} label="Baños" value={selectedUnit?.baths != null ? `${selectedUnit.baths}` : "—"} />
+          <Spec icon={<Maximize className="h-4 w-4" />} label="Superficie" value={selectedUnit?.sqm != null ? `${selectedUnit.sqm} m²` : "—"} />
+          <Spec icon={<Layers className="h-4 w-4" />} label="Piso" value={selectedUnit?.piso ?? "—"} />
         </div>
+
+        {model.units.length > 1 && (
+          <div className="mt-7">
+            <p className="text-jungle text-[11px] tracking-luxe uppercase mb-3">
+              Selecciona una unidad ({model.units.length} disponibles)
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {model.units.map((u) => {
+                const active = u.id === selectedUnit?.id;
+                return (
+                  <button
+                    key={u.id}
+                    onClick={() => setSelectedUnitId(u.id)}
+                    className={`text-xs tracking-wide px-4 py-2 border transition-elegant ${
+                      active
+                        ? "bg-jungle text-background border-jungle"
+                        : "bg-background border-border hover:border-jungle/50 text-foreground"
+                    }`}
+                  >
+                    #{u.number} · {u.piso}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="mt-7 flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
             <Building2 className="h-4 w-4 text-jungle" />
-            Quedan <span className="text-foreground font-medium">{model.available}</span> de {model.totalUnits} unidades
+            Quedan <span className="text-foreground font-medium">{model.available}</span> unidades de este modelo
           </div>
           <Link
             to="/agendar"
