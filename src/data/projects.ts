@@ -187,78 +187,32 @@ const RAW_PROJECTS = [
       "Seguridad 24/7",
       "Amenidades premium"
     ],
-    "available": 17,
-    "total": 57,
+    "available": 16,
+    "total": 16,
     "models": [
       {
-        "id": "distrito-norte-a",
-        "letter": "A",
-        "name": "Modelo A",
+        "id": "distrito-norte-t4",
+        "letter": "4",
+        "name": "Modelo terminación 4",
         "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 79.0 m²",
+        "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
         "baths": 1,
-        "sqm": 79.0,
-        "priceFrom": "USD 255,000",
-        "available": 1,
+        "sqm": null,
+        "priceFrom": "USD 208,000",
+        "available": 4,
         "units": [
           {
-            "id": "distrito-norte-a-004",
+            "id": "distrito-norte-t4-004",
             "number": "004",
             "price": "USD 255,000",
             "sqm": 79.0,
             "piso": "planta baja",
             "beds": 1,
             "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "distrito-norte-b",
-        "letter": "B",
-        "name": "Modelo B",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 65.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 65.0,
-        "priceFrom": "USD 215,583",
-        "available": 2,
-        "units": [
-          {
-            "id": "distrito-norte-b-102",
-            "number": "102",
-            "price": "USD 215,583",
-            "sqm": 65.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
           },
           {
-            "id": "distrito-norte-b-202",
-            "number": "202",
-            "price": "USD 220,583",
-            "sqm": 65.0,
-            "piso": "Piso 2",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "distrito-norte-c",
-        "letter": "C",
-        "name": "Modelo C",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 62.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 62.0,
-        "priceFrom": "USD 208,000",
-        "available": 2,
-        "units": [
-          {
-            "id": "distrito-norte-c-104",
+            "id": "distrito-norte-t4-104",
             "number": "104",
             "price": "USD 208,000",
             "sqm": 62.0,
@@ -267,76 +221,16 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "distrito-norte-c-204",
+            "id": "distrito-norte-t4-204",
             "number": "204",
             "price": "USD 212,000",
             "sqm": 62.0,
             "piso": "Piso 2",
             "beds": 1,
             "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "distrito-norte-d",
-        "letter": "D",
-        "name": "Modelo D",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 61.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 61.0,
-        "priceFrom": "USD 207,000",
-        "available": 1,
-        "units": [
+          },
           {
-            "id": "distrito-norte-d-106",
-            "number": "106",
-            "price": "USD 207,000",
-            "sqm": 61.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "distrito-norte-e",
-        "letter": "E",
-        "name": "Modelo E",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 62.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 62.0,
-        "priceFrom": "USD 208,000",
-        "available": 1,
-        "units": [
-          {
-            "id": "distrito-norte-e-111",
-            "number": "111",
-            "price": "USD 208,000",
-            "sqm": 62.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "distrito-norte-f",
-        "letter": "F",
-        "name": "Modelo F",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 62.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 62.0,
-        "priceFrom": "USD 208,000",
-        "available": 1,
-        "units": [
-          {
-            "id": "distrito-norte-f-114",
+            "id": "distrito-norte-t4-114",
             "number": "114",
             "price": "USD 208,000",
             "sqm": 62.0,
@@ -347,19 +241,60 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "distrito-norte-g",
-        "letter": "G",
-        "name": "Modelo G",
+        "id": "distrito-norte-t2",
+        "letter": "2",
+        "name": "Modelo terminación 2",
         "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 68.0 m²",
+        "shortInfo": "1 rec · 1 baños · 65.0 m²",
         "beds": 1,
         "baths": 1,
-        "sqm": 68.0,
-        "priceFrom": "USD 255,567",
-        "available": 1,
+        "sqm": 65.0,
+        "priceFrom": "USD 215,583",
+        "available": 2,
         "units": [
           {
-            "id": "distrito-norte-g-116",
+            "id": "distrito-norte-t2-102",
+            "number": "102",
+            "price": "USD 215,583",
+            "sqm": 65.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "distrito-norte-t2-202",
+            "number": "202",
+            "price": "USD 220,583",
+            "sqm": 65.0,
+            "piso": "Piso 2",
+            "beds": 1,
+            "baths": 1
+          }
+        ]
+      },
+      {
+        "id": "distrito-norte-t6",
+        "letter": "6",
+        "name": "Modelo terminación 6",
+        "type": "Departamento",
+        "shortInfo": "1 rec · 1 baños · tamaños variados",
+        "beds": 1,
+        "baths": 1,
+        "sqm": null,
+        "priceFrom": "USD 207,000",
+        "available": 2,
+        "units": [
+          {
+            "id": "distrito-norte-t6-106",
+            "number": "106",
+            "price": "USD 207,000",
+            "sqm": 61.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "distrito-norte-t6-116",
             "number": "116",
             "price": "USD 255,567",
             "sqm": 68.0,
@@ -370,9 +305,32 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "distrito-norte-h",
-        "letter": "H",
-        "name": "Modelo H",
+        "id": "distrito-norte-t1",
+        "letter": "1",
+        "name": "Modelo terminación 1",
+        "type": "Departamento",
+        "shortInfo": "1 rec · 1 baños · 62.0 m²",
+        "beds": 1,
+        "baths": 1,
+        "sqm": 62.0,
+        "priceFrom": "USD 208,000",
+        "available": 1,
+        "units": [
+          {
+            "id": "distrito-norte-t1-111",
+            "number": "111",
+            "price": "USD 208,000",
+            "sqm": 62.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          }
+        ]
+      },
+      {
+        "id": "distrito-norte-t7",
+        "letter": "7",
+        "name": "Modelo terminación 7",
         "type": "Departamento",
         "shortInfo": "2 rec · 3 baños · 137.0 m²",
         "beds": 2,
@@ -382,7 +340,7 @@ const RAW_PROJECTS = [
         "available": 3,
         "units": [
           {
-            "id": "distrito-norte-h-117",
+            "id": "distrito-norte-t7-117",
             "number": "117",
             "price": "USD 459,000",
             "sqm": 137.0,
@@ -391,7 +349,7 @@ const RAW_PROJECTS = [
             "baths": 3
           },
           {
-            "id": "distrito-norte-h-217",
+            "id": "distrito-norte-t7-217",
             "number": "217",
             "price": "USD 401,000",
             "sqm": 137.0,
@@ -400,7 +358,7 @@ const RAW_PROJECTS = [
             "baths": 3
           },
           {
-            "id": "distrito-norte-h-317",
+            "id": "distrito-norte-t7-317",
             "number": "317",
             "price": "USD 411,000",
             "sqm": 137.0,
@@ -411,32 +369,9 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "distrito-norte-i",
-        "letter": "I",
-        "name": "Modelo I",
-        "type": "Departamento",
-        "shortInfo": "4 rec · 4 baños · 326.0 m²",
-        "beds": 4,
-        "baths": 4,
-        "sqm": 326.0,
-        "priceFrom": "USD 815,000",
-        "available": 1,
-        "units": [
-          {
-            "id": "distrito-norte-i-401",
-            "number": "401",
-            "price": "USD 815,000",
-            "sqm": 326.0,
-            "piso": "Piso 4",
-            "beds": 4,
-            "baths": 4
-          }
-        ]
-      },
-      {
-        "id": "distrito-norte-j",
-        "letter": "J",
-        "name": "Modelo J",
+        "id": "distrito-norte-t5",
+        "letter": "5",
+        "name": "Modelo terminación 5",
         "type": "Departamento",
         "shortInfo": "3 rec · 3 baños · 128.72 m²",
         "beds": 3,
@@ -446,7 +381,7 @@ const RAW_PROJECTS = [
         "available": 1,
         "units": [
           {
-            "id": "distrito-norte-j-405",
+            "id": "distrito-norte-t5-405",
             "number": "405",
             "price": "USD 429,000",
             "sqm": 128.72,
@@ -457,19 +392,28 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "distrito-norte-k",
-        "letter": "K",
-        "name": "Modelo K",
-        "type": "Departamento",
-        "shortInfo": "4 rec · 4 baños · 371.0 m²",
+        "id": "distrito-norte-premium",
+        "letter": "PH",
+        "name": "Penthouse 401/406",
+        "type": "Penthouse",
+        "shortInfo": "Penthouse · orientaciones distintas",
         "beds": 4,
         "baths": 4,
-        "sqm": 371.0,
-        "priceFrom": "USD 927,000",
-        "available": 1,
+        "sqm": null,
+        "priceFrom": "USD 815,000",
+        "available": 2,
         "units": [
           {
-            "id": "distrito-norte-k-406",
+            "id": "distrito-norte-premium-401",
+            "number": "401",
+            "price": "USD 815,000",
+            "sqm": 326.0,
+            "piso": "Piso 4",
+            "beds": 4,
+            "baths": 4
+          },
+          {
+            "id": "distrito-norte-premium-406",
             "number": "406",
             "price": "USD 927,000",
             "sqm": 371.0,
@@ -484,7 +428,7 @@ const RAW_PROJECTS = [
         "letter": "Local",
         "name": "Local Comercial",
         "type": "Local",
-        "shortInfo": "Local comercial en planta baja · 246.11 m²",
+        "shortInfo": "Local comercial · 246.11 m²",
         "beds": null,
         "baths": null,
         "sqm": 246.11,
@@ -521,23 +465,23 @@ const RAW_PROJECTS = [
       "Restaurantes y bistro",
       "Bicisendas internas"
     ],
-    "available": 51,
-    "total": 121,
+    "available": 52,
+    "total": 52,
     "models": [
       {
-        "id": "musa-del-puerto-a",
-        "letter": "A",
-        "name": "Modelo A",
+        "id": "musa-del-puerto-impar",
+        "letter": "Impar",
+        "name": "Modelo terminación impar",
         "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 49.0 m²",
+        "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
         "baths": 1,
-        "sqm": 49.0,
-        "priceFrom": "USD 178,719",
-        "available": 5,
+        "sqm": null,
+        "priceFrom": "USD 166,911",
+        "available": 18,
         "units": [
           {
-            "id": "musa-del-puerto-a-105",
+            "id": "musa-del-puerto-impar-105",
             "number": "105",
             "price": "USD 178,719",
             "sqm": 49.0,
@@ -546,7 +490,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-a-109",
+            "id": "musa-del-puerto-impar-109",
             "number": "109",
             "price": "USD 178,719",
             "sqm": 49.0,
@@ -555,7 +499,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-a-205",
+            "id": "musa-del-puerto-impar-205",
             "number": "205",
             "price": "USD 181,748",
             "sqm": 49.0,
@@ -564,7 +508,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-a-209",
+            "id": "musa-del-puerto-impar-209",
             "number": "209",
             "price": "USD 181,748",
             "sqm": 49.0,
@@ -573,30 +517,16 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-a-309",
+            "id": "musa-del-puerto-impar-309",
             "number": "309",
             "price": "USD 187,806",
             "sqm": 49.0,
             "piso": "Piso 3",
             "beds": 1,
             "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-b",
-        "letter": "B",
-        "name": "Modelo B",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 49.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 49.0,
-        "priceFrom": "USD 178,719",
-        "available": 6,
-        "units": [
+          },
           {
-            "id": "musa-del-puerto-b-107",
+            "id": "musa-del-puerto-impar-107",
             "number": "107",
             "price": "USD 178,719",
             "sqm": 49.0,
@@ -605,7 +535,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-b-111",
+            "id": "musa-del-puerto-impar-111",
             "number": "111",
             "price": "USD 178,719",
             "sqm": 49.0,
@@ -614,7 +544,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-b-203",
+            "id": "musa-del-puerto-impar-203",
             "number": "203",
             "price": "USD 181,748",
             "sqm": 49.0,
@@ -623,7 +553,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-b-207",
+            "id": "musa-del-puerto-impar-207",
             "number": "207",
             "price": "USD 181,748",
             "sqm": 49.0,
@@ -632,7 +562,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-b-211",
+            "id": "musa-del-puerto-impar-211",
             "number": "211",
             "price": "USD 181,748",
             "sqm": 49.0,
@@ -641,48 +571,16 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-b-311",
+            "id": "musa-del-puerto-impar-311",
             "number": "311",
             "price": "USD 187,806",
             "sqm": 49.0,
             "piso": "Piso 3",
             "beds": 1,
             "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-c",
-        "letter": "C",
-        "name": "Modelo C",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 51.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 51.0,
-        "priceFrom": "USD 182,861",
-        "available": 13,
-        "units": [
-          {
-            "id": "musa-del-puerto-c-104",
-            "number": "104",
-            "price": "USD 182,861",
-            "sqm": 51.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
           },
           {
-            "id": "musa-del-puerto-c-108",
-            "number": "108",
-            "price": "USD 182,861",
-            "sqm": 51.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-115",
+            "id": "musa-del-puerto-impar-115",
             "number": "115",
             "price": "USD 182,861",
             "sqm": 51.0,
@@ -691,16 +589,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-c-208",
-            "number": "208",
-            "price": "USD 186,013",
-            "sqm": 51.0,
-            "piso": "Piso 2",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-215",
+            "id": "musa-del-puerto-impar-215",
             "number": "215",
             "price": "USD 186,013",
             "sqm": 51.0,
@@ -709,25 +598,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-c-304",
-            "number": "304",
-            "price": "USD 192,319",
-            "sqm": 51.0,
-            "piso": "Piso 3",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-308",
-            "number": "308",
-            "price": "USD 192,319",
-            "sqm": 51.0,
-            "piso": "Piso 3",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-315",
+            "id": "musa-del-puerto-impar-315",
             "number": "315",
             "price": "USD 192,319",
             "sqm": 51.0,
@@ -736,25 +607,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-c-404",
-            "number": "404",
-            "price": "USD 195,472",
-            "sqm": 51.0,
-            "piso": "Piso 4",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-408",
-            "number": "408",
-            "price": "USD 195,472",
-            "sqm": 51.0,
-            "piso": "Piso 4",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-415",
+            "id": "musa-del-puerto-impar-415",
             "number": "415",
             "price": "USD 195,472",
             "sqm": 51.0,
@@ -763,325 +616,16 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-c-504",
-            "number": "504",
-            "price": "USD 198,625",
-            "sqm": 51.0,
-            "piso": "Piso 5",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-c-508",
-            "number": "508",
-            "price": "USD 198,625",
-            "sqm": 51.0,
-            "piso": "Piso 5",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-d",
-        "letter": "D",
-        "name": "Modelo D",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 49.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 49.0,
-        "priceFrom": "USD 175,690",
-        "available": 10,
-        "units": [
-          {
-            "id": "musa-del-puerto-d-106",
-            "number": "106",
-            "price": "USD 175,690",
-            "sqm": 49.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-112",
-            "number": "112",
-            "price": "USD 175,690",
-            "sqm": 49.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-206",
-            "number": "206",
-            "price": "USD 178,719",
-            "sqm": 49.0,
-            "piso": "Piso 2",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-212",
-            "number": "212",
-            "price": "USD 178,719",
-            "sqm": 49.0,
-            "piso": "Piso 2",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-306",
-            "number": "306",
-            "price": "USD 184,777",
-            "sqm": 49.0,
-            "piso": "Piso 3",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-312",
-            "number": "312",
-            "price": "USD 184,777",
-            "sqm": 49.0,
-            "piso": "Piso 3",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-406",
-            "number": "406",
-            "price": "USD 187,806",
-            "sqm": 49.0,
-            "piso": "Piso 4",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-412",
-            "number": "412",
-            "price": "USD 187,806",
-            "sqm": 49.0,
-            "piso": "Piso 4",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-506",
-            "number": "506",
-            "price": "USD 190,835",
-            "sqm": 49.0,
-            "piso": "Piso 5",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-d-512",
-            "number": "512",
-            "price": "USD 190,835",
-            "sqm": 49.0,
-            "piso": "Piso 5",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-e",
-        "letter": "E",
-        "name": "Modelo E",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 51.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 51.0,
-        "priceFrom": "USD 182,861",
-        "available": 9,
-        "units": [
-          {
-            "id": "musa-del-puerto-e-110",
-            "number": "110",
-            "price": "USD 182,861",
-            "sqm": 51.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-114",
-            "number": "114",
-            "price": "USD 182,861",
-            "sqm": 51.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-210",
-            "number": "210",
-            "price": "USD 186,013",
-            "sqm": 51.0,
-            "piso": "Piso 2",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-214",
-            "number": "214",
-            "price": "USD 186,013",
-            "sqm": 51.0,
-            "piso": "Piso 2",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-310",
-            "number": "310",
-            "price": "USD 192,319",
-            "sqm": 51.0,
-            "piso": "Piso 3",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-314",
-            "number": "314",
-            "price": "USD 192,319",
-            "sqm": 51.0,
-            "piso": "Piso 3",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-410",
-            "number": "410",
-            "price": "USD 195,472",
-            "sqm": 51.0,
-            "piso": "Piso 4",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-414",
-            "number": "414",
-            "price": "USD 195,472",
-            "sqm": 51.0,
-            "piso": "Piso 4",
-            "beds": 1,
-            "baths": 1
-          },
-          {
-            "id": "musa-del-puerto-e-510",
-            "number": "510",
-            "price": "USD 198,625",
-            "sqm": 51.0,
-            "piso": "Piso 5",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-f",
-        "letter": "F",
-        "name": "Modelo F",
-        "type": "Departamento",
-        "shortInfo": "3 rec · 2 baños · 118.0 m²",
-        "beds": 3,
-        "baths": 2,
-        "sqm": 118.0,
-        "priceFrom": "USD 437,679",
-        "available": 3,
-        "units": [
-          {
-            "id": "musa-del-puerto-f-116",
-            "number": "116",
-            "price": "USD 437,679",
-            "sqm": 118.0,
-            "piso": "Piso 1",
-            "beds": 3,
-            "baths": 2
-          },
-          {
-            "id": "musa-del-puerto-f-216",
-            "number": "216",
-            "price": "USD 452,269",
-            "sqm": 118.0,
-            "piso": "Piso 2",
-            "beds": 3,
-            "baths": 2
-          },
-          {
-            "id": "musa-del-puerto-f-316",
-            "number": "316",
-            "price": "USD 466,858",
-            "sqm": 118.0,
-            "piso": "Piso 3",
-            "beds": 3,
-            "baths": 2
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-g",
-        "letter": "G",
-        "name": "Modelo G",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 51.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 51.0,
-        "priceFrom": "USD 196,585",
-        "available": 1,
-        "units": [
-          {
-            "id": "musa-del-puerto-g-117",
-            "number": "117",
-            "price": "USD 196,585",
-            "sqm": 51.0,
-            "piso": "Piso 1",
-            "beds": 1,
-            "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-h",
-        "letter": "H",
-        "name": "Modelo H",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 51.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 51.0,
-        "priceFrom": "USD 186,013",
-        "available": 1,
-        "units": [
-          {
-            "id": "musa-del-puerto-h-201",
+            "id": "musa-del-puerto-impar-201",
             "number": "201",
             "price": "USD 186,013",
             "sqm": 51.0,
             "piso": "Piso 2",
             "beds": 1,
             "baths": 1
-          }
-        ]
-      },
-      {
-        "id": "musa-del-puerto-i",
-        "letter": "I",
-        "name": "Modelo I",
-        "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 45.0 m²",
-        "beds": 1,
-        "baths": 1,
-        "sqm": 45.0,
-        "priceFrom": "USD 166,911",
-        "available": 2,
-        "units": [
+          },
           {
-            "id": "musa-del-puerto-i-213",
+            "id": "musa-del-puerto-impar-213",
             "number": "213",
             "price": "USD 166,911",
             "sqm": 45.0,
@@ -1090,7 +634,7 @@ const RAW_PROJECTS = [
             "baths": 1
           },
           {
-            "id": "musa-del-puerto-i-413",
+            "id": "musa-del-puerto-impar-413",
             "number": "413",
             "price": "USD 175,257",
             "sqm": 45.0,
@@ -1101,19 +645,271 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "musa-del-puerto-j",
-        "letter": "J",
-        "name": "Modelo J",
+        "id": "musa-del-puerto-par",
+        "letter": "Par",
+        "name": "Modelo terminación par",
         "type": "Departamento",
-        "shortInfo": "1 rec · 1 baños · 56.0 m²",
+        "shortInfo": "1 rec · 1 baños · tamaños variados",
         "beds": 1,
         "baths": 1,
-        "sqm": 56.0,
-        "priceFrom": "USD 211,174",
-        "available": 1,
+        "sqm": null,
+        "priceFrom": "USD 175,690",
+        "available": 29,
         "units": [
           {
-            "id": "musa-del-puerto-j-302",
+            "id": "musa-del-puerto-par-104",
+            "number": "104",
+            "price": "USD 182,861",
+            "sqm": 51.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-108",
+            "number": "108",
+            "price": "USD 182,861",
+            "sqm": 51.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-208",
+            "number": "208",
+            "price": "USD 186,013",
+            "sqm": 51.0,
+            "piso": "Piso 2",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-304",
+            "number": "304",
+            "price": "USD 192,319",
+            "sqm": 51.0,
+            "piso": "Piso 3",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-308",
+            "number": "308",
+            "price": "USD 192,319",
+            "sqm": 51.0,
+            "piso": "Piso 3",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-404",
+            "number": "404",
+            "price": "USD 195,472",
+            "sqm": 51.0,
+            "piso": "Piso 4",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-408",
+            "number": "408",
+            "price": "USD 195,472",
+            "sqm": 51.0,
+            "piso": "Piso 4",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-504",
+            "number": "504",
+            "price": "USD 198,625",
+            "sqm": 51.0,
+            "piso": "Piso 5",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-508",
+            "number": "508",
+            "price": "USD 198,625",
+            "sqm": 51.0,
+            "piso": "Piso 5",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-106",
+            "number": "106",
+            "price": "USD 175,690",
+            "sqm": 49.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-112",
+            "number": "112",
+            "price": "USD 175,690",
+            "sqm": 49.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-206",
+            "number": "206",
+            "price": "USD 178,719",
+            "sqm": 49.0,
+            "piso": "Piso 2",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-212",
+            "number": "212",
+            "price": "USD 178,719",
+            "sqm": 49.0,
+            "piso": "Piso 2",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-306",
+            "number": "306",
+            "price": "USD 184,777",
+            "sqm": 49.0,
+            "piso": "Piso 3",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-312",
+            "number": "312",
+            "price": "USD 184,777",
+            "sqm": 49.0,
+            "piso": "Piso 3",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-406",
+            "number": "406",
+            "price": "USD 187,806",
+            "sqm": 49.0,
+            "piso": "Piso 4",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-412",
+            "number": "412",
+            "price": "USD 187,806",
+            "sqm": 49.0,
+            "piso": "Piso 4",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-506",
+            "number": "506",
+            "price": "USD 190,835",
+            "sqm": 49.0,
+            "piso": "Piso 5",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-512",
+            "number": "512",
+            "price": "USD 190,835",
+            "sqm": 49.0,
+            "piso": "Piso 5",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-110",
+            "number": "110",
+            "price": "USD 182,861",
+            "sqm": 51.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-114",
+            "number": "114",
+            "price": "USD 182,861",
+            "sqm": 51.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-210",
+            "number": "210",
+            "price": "USD 186,013",
+            "sqm": 51.0,
+            "piso": "Piso 2",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-214",
+            "number": "214",
+            "price": "USD 186,013",
+            "sqm": 51.0,
+            "piso": "Piso 2",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-310",
+            "number": "310",
+            "price": "USD 192,319",
+            "sqm": 51.0,
+            "piso": "Piso 3",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-314",
+            "number": "314",
+            "price": "USD 192,319",
+            "sqm": 51.0,
+            "piso": "Piso 3",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-410",
+            "number": "410",
+            "price": "USD 195,472",
+            "sqm": 51.0,
+            "piso": "Piso 4",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-414",
+            "number": "414",
+            "price": "USD 195,472",
+            "sqm": 51.0,
+            "piso": "Piso 4",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-510",
+            "number": "510",
+            "price": "USD 198,625",
+            "sqm": 51.0,
+            "piso": "Piso 5",
+            "beds": 1,
+            "baths": 1
+          },
+          {
+            "id": "musa-del-puerto-par-302",
             "number": "302",
             "price": "USD 211,174",
             "sqm": 56.0,
@@ -1124,11 +920,75 @@ const RAW_PROJECTS = [
         ]
       },
       {
+        "id": "musa-del-puerto-t16",
+        "letter": "16",
+        "name": "Modelo terminación 16",
+        "type": "Departamento",
+        "shortInfo": "3 rec · 2 baños · 118.0 m²",
+        "beds": 3,
+        "baths": 2,
+        "sqm": 118.0,
+        "priceFrom": "USD 437,679",
+        "available": 3,
+        "units": [
+          {
+            "id": "musa-del-puerto-t16-116",
+            "number": "116",
+            "price": "USD 437,679",
+            "sqm": 118.0,
+            "piso": "Piso 1",
+            "beds": 3,
+            "baths": 2
+          },
+          {
+            "id": "musa-del-puerto-t16-216",
+            "number": "216",
+            "price": "USD 452,269",
+            "sqm": 118.0,
+            "piso": "Piso 2",
+            "beds": 3,
+            "baths": 2
+          },
+          {
+            "id": "musa-del-puerto-t16-316",
+            "number": "316",
+            "price": "USD 466,858",
+            "sqm": 118.0,
+            "piso": "Piso 3",
+            "beds": 3,
+            "baths": 2
+          }
+        ]
+      },
+      {
+        "id": "musa-del-puerto-t17",
+        "letter": "17",
+        "name": "Modelo terminación 17",
+        "type": "Departamento",
+        "shortInfo": "1 rec · 1 baños · 51.0 m²",
+        "beds": 1,
+        "baths": 1,
+        "sqm": 51.0,
+        "priceFrom": "USD 196,585",
+        "available": 1,
+        "units": [
+          {
+            "id": "musa-del-puerto-t17-117",
+            "number": "117",
+            "price": "USD 196,585",
+            "sqm": 51.0,
+            "piso": "Piso 1",
+            "beds": 1,
+            "baths": 1
+          }
+        ]
+      },
+      {
         "id": "musa-del-puerto-local",
         "letter": "Local",
         "name": "Local Comercial",
         "type": "Local",
-        "shortInfo": "Local comercial en planta baja · 455.24 m²",
+        "shortInfo": "Local comercial · 455.24 m²",
         "beds": null,
         "baths": null,
         "sqm": 455.24,
@@ -1165,23 +1025,23 @@ const RAW_PROJECTS = [
       "Senderos en selva nativa",
       "Diseño bioclimático"
     ],
-    "available": 73,
-    "total": 166,
+    "available": 62,
+    "total": 62,
     "models": [
       {
-        "id": "distrito-arte-a",
-        "letter": "A",
-        "name": "Modelo A",
+        "id": "distrito-arte-m01",
+        "letter": "01",
+        "name": "Modelo 01 · ambas torres",
         "type": "Departamento",
         "shortInfo": "126.0 m²",
         "beds": null,
         "baths": null,
         "sqm": 126.0,
         "priceFrom": "USD 419,000",
-        "available": 3,
+        "available": 7,
         "units": [
           {
-            "id": "distrito-arte-a-101",
+            "id": "distrito-arte-m01-101",
             "number": "101",
             "price": "USD 419,000",
             "sqm": 126.0,
@@ -1190,7 +1050,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-a-201",
+            "id": "distrito-arte-m01-201",
             "number": "201",
             "price": "USD 419,000",
             "sqm": 126.0,
@@ -1199,30 +1059,16 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-a-301",
+            "id": "distrito-arte-m01-301",
             "number": "301",
             "price": "USD 422,000",
             "sqm": 126.0,
             "piso": "Piso 3",
             "beds": null,
             "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-b",
-        "letter": "B",
-        "name": "Modelo B",
-        "type": "Departamento",
-        "shortInfo": "126.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 126.0,
-        "priceFrom": "USD 419,000",
-        "available": 4,
-        "units": [
+          },
           {
-            "id": "distrito-arte-b-101",
+            "id": "distrito-arte-m01-101",
             "number": "101",
             "price": "USD 419,000",
             "sqm": 126.0,
@@ -1231,7 +1077,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-b-201",
+            "id": "distrito-arte-m01-201",
             "number": "201",
             "price": "USD 419,000",
             "sqm": 126.0,
@@ -1240,7 +1086,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-b-301",
+            "id": "distrito-arte-m01-301",
             "number": "301",
             "price": "USD 419,000",
             "sqm": 126.0,
@@ -1249,7 +1095,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-b-401",
+            "id": "distrito-arte-m01-401",
             "number": "401",
             "price": "USD 425,000",
             "sqm": 126.0,
@@ -1260,467 +1106,19 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "distrito-arte-c",
-        "letter": "C",
-        "name": "Modelo C",
+        "id": "distrito-arte-m16-18",
+        "letter": "16/18",
+        "name": "Modelo 16 = 18",
         "type": "Departamento",
-        "shortInfo": "58.0 m²",
+        "shortInfo": "tamaños variados",
         "beds": null,
         "baths": null,
-        "sqm": 58.0,
-        "priceFrom": "USD 180,000",
-        "available": 10,
-        "units": [
-          {
-            "id": "distrito-arte-c-102",
-            "number": "102",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-106",
-            "number": "106",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-110",
-            "number": "110",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-112",
-            "number": "112",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-114",
-            "number": "114",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-204",
-            "number": "204",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-206",
-            "number": "206",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-210",
-            "number": "210",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-212",
-            "number": "212",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-c-214",
-            "number": "214",
-            "price": "USD 180,000",
-            "sqm": 58.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-d",
-        "letter": "D",
-        "name": "Modelo D",
-        "type": "Departamento",
-        "shortInfo": "46.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 46.0,
-        "priceFrom": "USD 135,150",
+        "sqm": null,
+        "priceFrom": "USD 490,000",
         "available": 7,
         "units": [
           {
-            "id": "distrito-arte-d-307",
-            "number": "307",
-            "price": "USD 135,150",
-            "sqm": 46.0,
-            "piso": "Piso 3",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-d-405",
-            "number": "405",
-            "price": "USD 165,000",
-            "sqm": 46.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-d-406",
-            "number": "406",
-            "price": "USD 165,000",
-            "sqm": 46.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-d-407",
-            "number": "407",
-            "price": "USD 165,000",
-            "sqm": 46.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-d-408",
-            "number": "408",
-            "price": "USD 165,000",
-            "sqm": 46.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-d-410",
-            "number": "410",
-            "price": "USD 165,000",
-            "sqm": 46.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-d-411",
-            "number": "411",
-            "price": "USD 140,250",
-            "sqm": 46.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-e",
-        "letter": "E",
-        "name": "Modelo E",
-        "type": "Departamento",
-        "shortInfo": "80.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 80.0,
-        "priceFrom": "USD 255,000",
-        "available": 8,
-        "units": [
-          {
-            "id": "distrito-arte-e-103",
-            "number": "103",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-105",
-            "number": "105",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-109",
-            "number": "109",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-111",
-            "number": "111",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-205",
-            "number": "205",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-209",
-            "number": "209",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-211",
-            "number": "211",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-e-305",
-            "number": "305",
-            "price": "USD 260,000",
-            "sqm": 80.0,
-            "piso": "Piso 3",
-            "beds": null,
-            "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-f",
-        "letter": "F",
-        "name": "Modelo F",
-        "type": "Departamento",
-        "shortInfo": "80.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 80.0,
-        "priceFrom": "USD 165,000",
-        "available": 14,
-        "units": [
-          {
-            "id": "distrito-arte-f-102",
-            "number": "102",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-104",
-            "number": "104",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-109",
-            "number": "109",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-112",
-            "number": "112",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-202",
-            "number": "202",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-204",
-            "number": "204",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-209",
-            "number": "209",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-212",
-            "number": "212",
-            "price": "USD 255,000",
-            "sqm": 80.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-304",
-            "number": "304",
-            "price": "USD 260,000",
-            "sqm": 80.0,
-            "piso": "Piso 3",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-309",
-            "number": "309",
-            "price": "USD 260,000",
-            "sqm": 80.0,
-            "piso": "Piso 3",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-402",
-            "number": "402",
-            "price": "USD 260,000",
-            "sqm": 80.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-404",
-            "number": "404",
-            "price": "USD 221,000",
-            "sqm": 80.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-409",
-            "number": "409",
-            "price": "USD 165,000",
-            "sqm": 80.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-f-412",
-            "number": "412",
-            "price": "USD 260,000",
-            "sqm": 80.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-g",
-        "letter": "G",
-        "name": "Modelo G",
-        "type": "Departamento",
-        "shortInfo": "112.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 112.0,
-        "priceFrom": "USD 379,000",
-        "available": 3,
-        "units": [
-          {
-            "id": "distrito-arte-g-115",
-            "number": "115",
-            "price": "USD 379,000",
-            "sqm": 112.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-g-215",
-            "number": "215",
-            "price": "USD 379,000",
-            "sqm": 112.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-g-315",
-            "number": "315",
-            "price": "USD 379,000",
-            "sqm": 112.0,
-            "piso": "Piso 3",
-            "beds": null,
-            "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-h",
-        "letter": "H",
-        "name": "Modelo H",
-        "type": "Departamento",
-        "shortInfo": "150.9 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 150.9,
-        "priceFrom": "USD 490,000",
-        "available": 3,
-        "units": [
-          {
-            "id": "distrito-arte-h-116",
+            "id": "distrito-arte-m16-18-116",
             "number": "116",
             "price": "USD 490,000",
             "sqm": 150.9,
@@ -1729,7 +1127,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-h-216",
+            "id": "distrito-arte-m16-18-216",
             "number": "216",
             "price": "USD 490,000",
             "sqm": 150.9,
@@ -1738,80 +1136,16 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-h-316",
+            "id": "distrito-arte-m16-18-316",
             "number": "316",
             "price": "USD 505,000",
             "sqm": 150.9,
             "piso": "Piso 3",
             "beds": null,
             "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-i",
-        "letter": "I",
-        "name": "Modelo I",
-        "type": "Departamento",
-        "shortInfo": "112.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 112.0,
-        "priceFrom": "USD 379,000",
-        "available": 4,
-        "units": [
-          {
-            "id": "distrito-arte-i-117",
-            "number": "117",
-            "price": "USD 379,000",
-            "sqm": 112.0,
-            "piso": "Piso 1",
-            "beds": null,
-            "baths": null
           },
           {
-            "id": "distrito-arte-i-217",
-            "number": "217",
-            "price": "USD 379,000",
-            "sqm": 112.0,
-            "piso": "Piso 2",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-i-317",
-            "number": "317",
-            "price": "USD 379,000",
-            "sqm": 112.0,
-            "piso": "Piso 3",
-            "beds": null,
-            "baths": null
-          },
-          {
-            "id": "distrito-arte-i-417",
-            "number": "417",
-            "price": "USD 385,000",
-            "sqm": 112.0,
-            "piso": "Piso 4",
-            "beds": null,
-            "baths": null
-          }
-        ]
-      },
-      {
-        "id": "distrito-arte-j",
-        "letter": "J",
-        "name": "Modelo J",
-        "type": "Departamento",
-        "shortInfo": "166.0 m²",
-        "beds": null,
-        "baths": null,
-        "sqm": 166.0,
-        "priceFrom": "USD 549,000",
-        "available": 4,
-        "units": [
-          {
-            "id": "distrito-arte-j-118",
+            "id": "distrito-arte-m16-18-118",
             "number": "118",
             "price": "USD 555,000",
             "sqm": 166.0,
@@ -1820,7 +1154,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-j-218",
+            "id": "distrito-arte-m16-18-218",
             "number": "218",
             "price": "USD 549,000",
             "sqm": 166.0,
@@ -1829,7 +1163,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-j-318",
+            "id": "distrito-arte-m16-18-318",
             "number": "318",
             "price": "USD 560,000",
             "sqm": 166.0,
@@ -1838,7 +1172,7 @@ const RAW_PROJECTS = [
             "baths": null
           },
           {
-            "id": "distrito-arte-j-418",
+            "id": "distrito-arte-m16-18-418",
             "number": "418",
             "price": "USD 565,000",
             "sqm": 166.0,
@@ -1849,9 +1183,479 @@ const RAW_PROJECTS = [
         ]
       },
       {
-        "id": "distrito-arte-k",
-        "letter": "K",
-        "name": "Modelo K",
+        "id": "distrito-arte-m15-17",
+        "letter": "15/17",
+        "name": "Modelo 15 = 17",
+        "type": "Departamento",
+        "shortInfo": "112.0 m²",
+        "beds": null,
+        "baths": null,
+        "sqm": 112.0,
+        "priceFrom": "USD 379,000",
+        "available": 7,
+        "units": [
+          {
+            "id": "distrito-arte-m15-17-115",
+            "number": "115",
+            "price": "USD 379,000",
+            "sqm": 112.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-m15-17-215",
+            "number": "215",
+            "price": "USD 379,000",
+            "sqm": 112.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-m15-17-315",
+            "number": "315",
+            "price": "USD 379,000",
+            "sqm": 112.0,
+            "piso": "Piso 3",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-m15-17-117",
+            "number": "117",
+            "price": "USD 379,000",
+            "sqm": 112.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-m15-17-217",
+            "number": "217",
+            "price": "USD 379,000",
+            "sqm": 112.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-m15-17-317",
+            "number": "317",
+            "price": "USD 379,000",
+            "sqm": 112.0,
+            "piso": "Piso 3",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-m15-17-417",
+            "number": "417",
+            "price": "USD 385,000",
+            "sqm": 112.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          }
+        ]
+      },
+      {
+        "id": "distrito-arte-mb",
+        "letter": "B",
+        "name": "Modelo B · Torre A",
+        "type": "Departamento",
+        "shortInfo": "58 m² · endings 02-14",
+        "beds": null,
+        "baths": null,
+        "sqm": 58.0,
+        "priceFrom": "USD 180,000",
+        "available": 10,
+        "units": [
+          {
+            "id": "distrito-arte-mb-102",
+            "number": "102",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-106",
+            "number": "106",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-110",
+            "number": "110",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-112",
+            "number": "112",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-114",
+            "number": "114",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-204",
+            "number": "204",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-206",
+            "number": "206",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-210",
+            "number": "210",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-212",
+            "number": "212",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-mb-214",
+            "number": "214",
+            "price": "USD 180,000",
+            "sqm": 58.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          }
+        ]
+      },
+      {
+        "id": "distrito-arte-md",
+        "letter": "D",
+        "name": "Modelo D · ambas torres",
+        "type": "Departamento",
+        "shortInfo": "80 m²",
+        "beds": null,
+        "baths": null,
+        "sqm": 80.0,
+        "priceFrom": "USD 165,000",
+        "available": 22,
+        "units": [
+          {
+            "id": "distrito-arte-md-103",
+            "number": "103",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-105",
+            "number": "105",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-109",
+            "number": "109",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-111",
+            "number": "111",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-205",
+            "number": "205",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-209",
+            "number": "209",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-211",
+            "number": "211",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-305",
+            "number": "305",
+            "price": "USD 260,000",
+            "sqm": 80.0,
+            "piso": "Piso 3",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-102",
+            "number": "102",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-104",
+            "number": "104",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-109",
+            "number": "109",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-112",
+            "number": "112",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 1",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-202",
+            "number": "202",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-204",
+            "number": "204",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-209",
+            "number": "209",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-212",
+            "number": "212",
+            "price": "USD 255,000",
+            "sqm": 80.0,
+            "piso": "Piso 2",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-304",
+            "number": "304",
+            "price": "USD 260,000",
+            "sqm": 80.0,
+            "piso": "Piso 3",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-309",
+            "number": "309",
+            "price": "USD 260,000",
+            "sqm": 80.0,
+            "piso": "Piso 3",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-402",
+            "number": "402",
+            "price": "USD 260,000",
+            "sqm": 80.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-404",
+            "number": "404",
+            "price": "USD 221,000",
+            "sqm": 80.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-409",
+            "number": "409",
+            "price": "USD 165,000",
+            "sqm": 80.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-md-412",
+            "number": "412",
+            "price": "USD 260,000",
+            "sqm": 80.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          }
+        ]
+      },
+      {
+        "id": "distrito-arte-me",
+        "letter": "E",
+        "name": "Modelo E · Torre B",
+        "type": "Departamento",
+        "shortInfo": "46 m²",
+        "beds": null,
+        "baths": null,
+        "sqm": 46.0,
+        "priceFrom": "USD 135,150",
+        "available": 7,
+        "units": [
+          {
+            "id": "distrito-arte-me-307",
+            "number": "307",
+            "price": "USD 135,150",
+            "sqm": 46.0,
+            "piso": "Piso 3",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-me-405",
+            "number": "405",
+            "price": "USD 165,000",
+            "sqm": 46.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-me-406",
+            "number": "406",
+            "price": "USD 165,000",
+            "sqm": 46.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-me-407",
+            "number": "407",
+            "price": "USD 165,000",
+            "sqm": 46.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-me-408",
+            "number": "408",
+            "price": "USD 165,000",
+            "sqm": 46.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-me-410",
+            "number": "410",
+            "price": "USD 165,000",
+            "sqm": 46.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          },
+          {
+            "id": "distrito-arte-me-411",
+            "number": "411",
+            "price": "USD 140,250",
+            "sqm": 46.0,
+            "piso": "Piso 4",
+            "beds": null,
+            "baths": null
+          }
+        ]
+      },
+      {
+        "id": "distrito-arte-otros",
+        "letter": "Otros",
+        "name": "Otros modelos",
         "type": "Departamento",
         "shortInfo": "62.0 m²",
         "beds": null,
@@ -1861,7 +1665,7 @@ const RAW_PROJECTS = [
         "available": 1,
         "units": [
           {
-            "id": "distrito-arte-k-208",
+            "id": "distrito-arte-otros-208",
             "number": "208",
             "price": "USD 209,000",
             "sqm": 62.0,
@@ -1876,7 +1680,7 @@ const RAW_PROJECTS = [
         "letter": "Local",
         "name": "Local Comercial",
         "type": "Local",
-        "shortInfo": "Local comercial en planta baja · None m²",
+        "shortInfo": "Local comercial",
         "beds": null,
         "baths": null,
         "sqm": null,
