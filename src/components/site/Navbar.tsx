@@ -15,6 +15,10 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // On non-home pages we don't have a dark hero, so always render the
+  // surface (light bg + dark text) variant to keep the nav legible.
+  const isHome = location.pathname === "/";
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
@@ -41,7 +45,7 @@ const Navbar = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const onSurface = scrolled || open;
+  const onSurface = scrolled || open || !isHome;
 
   return (
     <header

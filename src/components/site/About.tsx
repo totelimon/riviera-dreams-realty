@@ -7,21 +7,14 @@ const stats = [
   { value: "98%", label: "Clientes recomendados" },
 ];
 
-const team = [
-  {
-    name: "Marta Marcilla Alonso",
-    role: "Líder empresarial",
-    image:
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/503674789_18508109932027624_212475279525263594_n.jpg?v=1777234430",
-    instagram: "marta.marcilla",
-  },
-  {
-    name: "Alejandro Jacome Rodriguez",
-    role: "Broker representante",
-    image:
-      "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/WhatsApp_Image_2026-04-24_at_10.49.20_AM.jpg?v=1777234573",
-  },
-];
+const leader = {
+  name: "Marta Marcilla Alonso",
+  role: "Líder empresarial",
+  image:
+    "https://cdn.shopify.com/s/files/1/0760/1799/1845/files/503674789_18508109932027624_212475279525263594_n.jpg?v=1777234430",
+  instagram: "marta.marcilla",
+  bio: "Con más de 20 años de experiencia en el sector inmobiliario de la Riviera Maya, Marta es una líder referente como mujer en la industria. Ha acompañado a inversionistas internacionales en operaciones de alto valor, distinguiéndose por su visión estratégica, integridad y compromiso con cada cliente.",
+};
 
 const About = () => {
   return (
@@ -69,42 +62,36 @@ const About = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {team.map((member) => (
-            <article
-              key={member.name}
-              className="group bg-card border border-border overflow-hidden"
+        <article className="bg-card border border-border overflow-hidden flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 md:p-8 max-w-2xl">
+          <div className="w-32 h-32 sm:w-40 sm:h-40 shrink-0 overflow-hidden bg-muted rounded-full">
+            <img
+              src={leader.image}
+              alt={`Retrato de ${leader.name}`}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex-1">
+            <p className="text-jungle text-[11px] tracking-luxe uppercase mb-2">
+              {leader.role}
+            </p>
+            <h4 className="font-serif text-2xl md:text-3xl text-foreground">
+              {leader.name}
+            </h4>
+            <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
+              {leader.bio}
+            </p>
+            <a
+              href={`https://instagram.com/${leader.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-jungle transition-colors"
             >
-              <div className="aspect-[4/5] overflow-hidden bg-muted">
-                <img
-                  src={member.image}
-                  alt={`Retrato de ${member.name}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6 md:p-8">
-                <p className="text-jungle text-[11px] tracking-luxe uppercase mb-2">
-                  {member.role}
-                </p>
-                <h4 className="font-serif text-2xl md:text-3xl text-foreground">
-                  {member.name}
-                </h4>
-                {member.instagram && (
-                  <a
-                    href={`https://instagram.com/${member.instagram}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-jungle transition-colors"
-                  >
-                    <Instagram className="h-4 w-4" />
-                    <span>@{member.instagram}</span>
-                  </a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
+              <Instagram className="h-4 w-4" />
+              <span>@{leader.instagram}</span>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
   );
