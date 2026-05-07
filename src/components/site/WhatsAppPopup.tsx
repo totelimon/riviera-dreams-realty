@@ -17,7 +17,7 @@ const WhatsAppPopup = () => {
   return (
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3">
       {open && (
-        <div className="relative bg-background shadow-elegant border border-border p-4 pr-9 max-w-[260px] animate-fade-in">
+        <div className="relative bg-background shadow-elegant border border-border p-4 pr-9 max-w-[260px] animate-fade-up">
           <button
             aria-label="Cerrar"
             onClick={() => setOpen(false)}
