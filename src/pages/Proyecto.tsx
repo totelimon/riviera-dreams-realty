@@ -12,7 +12,7 @@ import {
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import LeadForm from "@/components/site/LeadForm";
-import { getProjectBySlug, type UnitModel } from "@/data/projects";
+import { getProjectBySlug, type UnitModel, type Unit } from "@/data/projects";
 
 const Proyecto = () => {
   const { slug } = useParams();
@@ -43,10 +43,10 @@ const Proyecto = () => {
         <div className="relative h-full container flex flex-col justify-end pb-16 md:pb-24">
           <Link
             to="/propiedades"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-gold text-[11px] tracking-luxe uppercase mb-8 transition-colors"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-gold hover:text-primary-foreground text-white border border-white/30 text-xs md:text-sm tracking-luxe uppercase mb-8 px-6 md:px-8 py-3 md:py-4 backdrop-blur-sm transition-elegant w-fit"
           >
-            <ChevronLeft className="h-4 w-4" />
-            Volver a desarrollos
+            <ChevronLeft className="h-5 w-5" />
+            Volver a los desarrollos
           </Link>
           <p className="text-gold text-xs tracking-luxe uppercase mb-4">
             {project.region}
@@ -67,7 +67,7 @@ const Proyecto = () => {
       </section>
 
       {/* DESCRIPTION + HIGHLIGHTS */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
             <p className="text-jungle text-xs tracking-luxe uppercase mb-4">
@@ -76,7 +76,7 @@ const Proyecto = () => {
             <h2 className="font-serif text-3xl md:text-5xl text-foreground leading-tight text-balance">
               {project.tagline}
             </h2>
-            <p className="mt-6 text-muted-foreground leading-relaxed text-base md:text-lg">
+            <p className="mt-5 text-muted-foreground leading-relaxed text-base md:text-lg">
               {project.description}
             </p>
           </div>
@@ -137,14 +137,14 @@ const Proyecto = () => {
                           isActive ? "text-gold" : "text-jungle"
                         }`}
                       >
-                        {m.type}
+                        {m.type} · {m.letter}
                       </span>
                       <span
                         className={`text-[10px] tracking-luxe uppercase ${
                           isActive ? "text-background/80" : "text-muted-foreground"
                         }`}
                       >
-                        {m.available} de {m.totalUnits}
+                        {m.available} disp.
                       </span>
                     </div>
                     <h3
