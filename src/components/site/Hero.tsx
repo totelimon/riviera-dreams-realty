@@ -1,7 +1,28 @@
+import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-villa.jpg";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        if (!imgRef.current) return;
+        const y = window.scrollY;
+        // smooth parallax: image moves at 40% of scroll
+        imgRef.current.style.transform = `translate3d(0, ${y * 0.4}px, 0) scale(1.15)`;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
@@ -21,11 +42,13 @@ const Hero = () => {
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <div className="absolute inset-0">
         <img
+          ref={imgRef}
           src={heroImage}
           alt="Villa de lujo frente al mar Caribe en Playa del Carmen"
           width={1920}
           height={1280}
-          className="h-full w-full object-cover animate-slow-zoom"
+          className="h-full w-full object-cover will-change-transform transition-transform duration-300 ease-out"
+          style={{ transform: "translate3d(0,0,0) scale(1.15)" }}
         />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-jungle/20" />
